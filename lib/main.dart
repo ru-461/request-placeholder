@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -19,6 +17,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
+final List buttonNames = [
+  '/posts',
+  '/comments',
+  '/albums',
+  '/photos',
+  '/todos',
+  '/users'
+];
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -34,6 +41,21 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        centerTitle: true,
+      ),
+      drawer: Drawer(
+        child: ListView.builder(
+          itemCount: buttonNames.length,
+          itemBuilder: (BuildContext context, int index) {
+            final buttonName = buttonNames[index];
+            return ListTile(
+              title: Text(buttonName),
+              onTap: () {
+                print(context);
+              },
+            );
+          },
+        ),
       ),
       body: Center(
         child: Column(
@@ -41,6 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: const [
             Text(
               'Hello {JSON} Placeholder.',
+              style: TextStyle(color: Colors.blue, fontSize: 24),
             )
           ],
         ),
