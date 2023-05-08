@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: const [
             Text(
               'Hello {JSON} Placeholder.',
-              style: TextStyle(color: Colors.blue, fontSize: 24),
+              style: TextStyle(color: Colors.blue, fontSize: 20),
             )
           ],
         ),
