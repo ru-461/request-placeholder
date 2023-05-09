@@ -27,10 +27,10 @@ final List buttonNames = [
 ];
 
 final List buttonIcons = [
-  Icons.post_add,
-  Icons.comment,
-  Icons.album,
-  Icons.photo,
+  Icons.article,
+  Icons.forum,
+  Icons.collections,
+  Icons.photo_camera,
   Icons.task,
   Icons.people,
 ];
