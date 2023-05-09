@@ -26,6 +26,15 @@ final List buttonNames = [
   '/users'
 ];
 
+final List buttonIcons = [
+  Icons.post_add,
+  Icons.comment,
+  Icons.album,
+  Icons.photo,
+  Icons.task,
+  Icons.people,
+];
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
@@ -48,8 +57,10 @@ class _MyHomePageState extends State<MyHomePage> {
           itemCount: buttonNames.length,
           itemBuilder: (BuildContext context, int index) {
             final buttonName = buttonNames[index];
+            final buttonIcon = buttonIcons[index];
             return ListTile(
               title: Text(buttonName),
+              leading: Icon(buttonIcon),
               onTap: () {
                 print(context);
               },
