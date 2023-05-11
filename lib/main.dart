@@ -61,9 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
             return ListTile(
               title: Text(buttonName),
               leading: Icon(buttonIcon),
-              onTap: () {
-                print(context);
-              },
+              onTap: () {},
             );
           },
         ),
@@ -74,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: const [
             Text(
               'Hello {JSON} Placeholder.',
-              style: TextStyle(color: Colors.blue, fontSize: 20),
+              style: TextStyle(color: Colors.blue, fontSize: 24),
             )
           ],
         ),
