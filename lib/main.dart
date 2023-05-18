@@ -73,7 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               'Hello {JSON} Placeholder.',
               style: TextStyle(color: Colors.blue, fontSize: 24),
-            )
+            ),
           ],
         ),
       ),
