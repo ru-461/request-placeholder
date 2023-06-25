@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 void main() => runApp(const MyApp());
 
@@ -46,6 +47,43 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Future<void> tryIt() async {
+    // API URL
+    String url = "https://jsonplaceholder.typicode.com/todos/1";
+    // リクエスト結果メッセージ
+    String message = '';
+
+    try {
+      // リクエスト開始
+      http.Response response = await http.get(Uri.parse(url));
+
+      // ステータスコード確認
+      if (response.statusCode == 200) {
+        // 成功
+        message = response.body;
+      } else {
+        // 失敗
+        message = 'Failed to access API.';
+      }
+    } catch (error) {
+      // 例外
+      message = 'Request error.';
+    }
+
+    // ウィジェットを再構築してダイアログ表示
+    setState(() {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text('Result'),
+            content: Text(message),
+          );
+        },
+      );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,13 +105,21 @@ class _MyHomePageState extends State<MyHomePage> {
           },
         ),
       ),
-      body: const Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Hello {JSON} Placeholder.',
               style: TextStyle(color: Colors.blue, fontSize: 24),
+            ),
+            ElevatedButton(
+              onPressed: tryIt,
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color.fromRGBO(16, 185, 129, 1)),
+              child: const Text(
+                'Try it',
+              ),
             ),
           ],
         ),
