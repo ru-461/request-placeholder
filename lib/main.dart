@@ -1,8 +1,10 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:http/http.dart' as http;
+import 'package:logger/logger.dart';
+
+final logger = Logger();
 
 void main() => runApp(const MyApp());
 
@@ -59,6 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       // リクエスト開始
       http.Response response = await http.get(Uri.parse(url));
+      logger.i(response.statusCode);
 
       // ステータスコード確認
       if (response.statusCode == 200) {
