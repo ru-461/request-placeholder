@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:http/http.dart' as http;
 
 void main() => runApp(const MyApp());
@@ -49,7 +52,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   Future<void> tryIt() async {
     // API URL
-    String url = "https://jsonplaceholder.typicode.com/todos/1";
+    String url = 'https://jsonplaceholder.typicode.com/todos/1';
     // リクエスト結果メッセージ
     String message = '';
 
