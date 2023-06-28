@@ -15,7 +15,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Request {JSON} Placeholder'),
+      home: const TopPage(title: 'Request {JSON} Placeholder'),
     );
   }
 }
@@ -38,16 +38,16 @@ final List buttonIcons = [
   Icons.people,
 ];
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class TopPage extends StatefulWidget {
+  const TopPage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<TopPage> createState() => _TopPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _TopPageState extends State<TopPage> {
   Future<void> tryIt() async {
     // API URL
     String url = 'https://jsonplaceholder.typicode.com/todos/1';
