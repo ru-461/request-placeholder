@@ -1,0 +1,15 @@
+{
+  "dart.closingLabels": false,
+  "dart.openDevTools": "flutter",
+  "dart.previewFlutterUiGuides": true,
+  "dart.previewFlutterUiGuidesCustomTracking": true,
+  "dart.renameFilesWithClasses": "always",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": true
+}
