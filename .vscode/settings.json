@@ -1,8 +1,5 @@
 {
-  "dart.closingLabels": false,
   "dart.openDevTools": "flutter",
-  "dart.previewFlutterUiGuides": true,
-  "dart.previewFlutterUiGuidesCustomTracking": true,
   "dart.renameFilesWithClasses": "always",
   "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": {
