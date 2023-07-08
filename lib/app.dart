@@ -51,7 +51,7 @@ class _TopPageState extends State<TopPage> {
   Future<void> tryIt() async {
     // API URL
     String url = 'https://jsonplaceholder.typicode.com/todos/1';
-    // リクエスト結果メッセージ
+    // メッセージ
     String message = '';
 
     try {
@@ -72,7 +72,7 @@ class _TopPageState extends State<TopPage> {
       message = 'Request error.';
     }
 
-    // ウィジェットを再構築してダイアログ表示
+    // ダイアログ表示
     setState(() {
       showDialog(
         context: context,
