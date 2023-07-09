@@ -1,3 +1,5 @@
 # RequestPlaceholder
 
-Project for validation of requests to [JSONPlaceholder - Free Fake REST API](https://jsonplaceholder.typicode.com/)
+Validation of requests to [JSONPlaceholder - Free Fake REST API](https://jsonplaceholder.typicode.com/) with Flutter.
+
+
