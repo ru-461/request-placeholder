@@ -14,6 +14,10 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  _switchRoute() {
+    logger.w('OK');
+  }
+
   Future<void> tryIt() async {
     // API URL
     String url = 'https://jsonplaceholder.typicode.com/todos/1';
