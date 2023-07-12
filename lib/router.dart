@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:request_placeholder/view/Comments.dart';
 import 'package:request_placeholder/view/Photos.dart';
-import 'package:request_placeholder/view/Todos.dart';
-import 'package:request_placeholder/view/Users.dart';
 import 'package:request_placeholder/view/albums.dart';
 import 'package:request_placeholder/view/base.dart';
+import 'package:request_placeholder/view/comments.dart';
 import 'package:request_placeholder/view/home.dart';
 import 'package:request_placeholder/view/posts.dart';
+import 'package:request_placeholder/view/todos.dart';
+import 'package:request_placeholder/view/users.dart';
 
 // キー
 final GlobalKey<NavigatorState> _rootNavigatorKey =
@@ -18,7 +18,7 @@ final GlobalKey<NavigatorState> _shellNavigatorKey =
 // ルート
 final GoRouter router = GoRouter(
   navigatorKey: _rootNavigatorKey,
-  initialLocation: '/',
+  initialLocation: '/posts',
   debugLogDiagnostics: true,
   routes: <RouteBase>[
     ShellRoute(
@@ -26,7 +26,7 @@ final GoRouter router = GoRouter(
         builder: (context, state, child) => Base(child: child),
         routes: <RouteBase>[
           GoRoute(
-            path: '/',
+            path: '/home',
             pageBuilder: (BuildContext context, GoRouterState state) {
               return _noneTransitionPage(child: const Home());
             },
@@ -63,8 +63,8 @@ final GoRouter router = GoRouter(
           ),
           GoRoute(
             path: '/users',
-            builder: (BuildContext context, GoRouterState state) {
-              return const Users();
+            pageBuilder: (BuildContext context, GoRouterState state) {
+              return _noneTransitionPage(child: const Users());
             },
           ),
         ])

@@ -7,17 +7,11 @@ final logger = Logger();
 class Home extends StatefulWidget {
   const Home({super.key});
 
-  final String title = 'Home';
-
   @override
   State<Home> createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
-  _switchRoute() {
-    logger.w('OK');
-  }
-
   Future<void> tryIt() async {
     // API URL
     String url = 'https://jsonplaceholder.typicode.com/todos/1';
@@ -59,11 +53,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        centerTitle: true,
-        backgroundColor: const Color.fromRGBO(16, 185, 129, 1),
-      ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

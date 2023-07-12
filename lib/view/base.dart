@@ -13,10 +13,22 @@ class Base extends StatefulWidget {
 
 class _BaseState extends State<Base> {
   int _selectedIndex = 0;
+  String _pageTitle = '';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(_pageTitle),
+        centerTitle: true,
+        backgroundColor: const Color.fromRGBO(16, 185, 129, 1),
+        leading: IconButton(
+            onPressed: () => {context.go('/home')},
+            icon: const Icon(Icons.home)),
+        actions: [
+          IconButton(onPressed: () => {}, icon: const Icon(Icons.settings))
+        ],
+      ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex,
         destinations: const [
@@ -31,33 +43,41 @@ class _BaseState extends State<Base> {
         onDestinationSelected: (index) {
           switch (index) {
             case 0:
-              context.go('/');
-              break;
-            case 1:
+              _selectedIndex = index;
+              _pageTitle = 'Posts';
               context.go('/posts');
               break;
-            case 2:
+            case 1:
+              _selectedIndex = index;
+              _pageTitle = 'Comments';
               context.go('/comments');
               break;
-            case 3:
+            case 2:
+              _selectedIndex = index;
+              _pageTitle = 'Albums';
               context.go('/albums');
               break;
-            case 4:
+            case 3:
+              _selectedIndex = index;
+              _pageTitle = 'Photos';
               context.go('/photos');
               break;
-            case 5:
+            case 4:
+              _selectedIndex = index;
+              _pageTitle = 'Todos';
               context.go('/todos');
               break;
-            case 6:
+            case 5:
+              _selectedIndex = index;
+              _pageTitle = 'Users';
               context.go('/users');
               break;
             default:
+              _selectedIndex = index;
+              _pageTitle = 'Home';
               context.go('/');
           }
-          setState(() {
-            // インデックスを更新
-            _selectedIndex = index;
-          });
+          setState(() {});
         },
       ),
       body: widget.child,
