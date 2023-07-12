@@ -23,10 +23,12 @@ class _BaseState extends State<Base> {
         centerTitle: true,
         backgroundColor: const Color.fromRGBO(16, 185, 129, 1),
         leading: IconButton(
-            onPressed: () => {context.go('/home')},
+            onPressed: () => {context.push('/home')},
             icon: const Icon(Icons.home)),
         actions: [
-          IconButton(onPressed: () => {}, icon: const Icon(Icons.settings))
+          IconButton(
+              onPressed: () => {context.push('/settings')},
+              icon: const Icon(Icons.settings))
         ],
       ),
       bottomNavigationBar: NavigationBar(

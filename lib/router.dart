@@ -6,6 +6,7 @@ import 'package:request_placeholder/view/base.dart';
 import 'package:request_placeholder/view/comments.dart';
 import 'package:request_placeholder/view/home.dart';
 import 'package:request_placeholder/view/posts.dart';
+import 'package:request_placeholder/view/settings.dart';
 import 'package:request_placeholder/view/todos.dart';
 import 'package:request_placeholder/view/users.dart';
 
@@ -27,8 +28,14 @@ final GoRouter router = GoRouter(
         routes: <RouteBase>[
           GoRoute(
             path: '/home',
-            pageBuilder: (BuildContext context, GoRouterState state) {
-              return _noneTransitionPage(child: const Home());
+            builder: (BuildContext context, GoRouterState state) {
+              return const Home();
+            },
+          ),
+          GoRoute(
+            path: '/settings',
+            builder: (BuildContext context, GoRouterState state) {
+              return const Settings();
             },
           ),
           GoRoute(
