@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
+
+// ロガー
+final logger = Logger();
 
 class Albums extends StatefulWidget {
   const Albums({super.key});

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 
+// ロガー
 final logger = Logger();
 
 class Home extends StatefulWidget {

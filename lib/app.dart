@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/router.dart';
 
+// ロガー
 final logger = Logger();
 
 class App extends StatelessWidget {

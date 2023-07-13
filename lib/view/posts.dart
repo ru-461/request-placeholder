@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
+
+// ロガー
+final logger = Logger();
 
 class Posts extends StatefulWidget {
   const Posts({super.key});

@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:logger/logger.dart';
+
+// ロガー
+final logger = Logger();
 
 class Base extends StatefulWidget {
   const Base({Key? key, required this.child}) : super(key: key);
