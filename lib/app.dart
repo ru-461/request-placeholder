@@ -12,7 +12,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Request {JSON} Placeholder',
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       theme: ThemeData(useMaterial3: true, brightness: Brightness.light),
       darkTheme: ThemeData(useMaterial3: true, brightness: Brightness.dark),
       routerConfig: router,
