@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
+import 'package:request_placeholder/constant/url.dart';
 
 // ロガー
 final logger = Logger();
@@ -14,10 +17,11 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   Future<void> tryIt() async {
-    // API URL
-    String url = 'https://jsonplaceholder.typicode.com/todos/1';
-    // メッセージ
+    // URL
+    String url = '${URL.todos}/' '1';
+    // レスポンス
     String message = '';
+    dynamic responseData;
 
     try {
       // リクエスト開始
@@ -27,7 +31,9 @@ class _HomeState extends State<Home> {
       // ステータスコード確認
       if (response.statusCode == 200) {
         // 成功
+        responseData = jsonDecode(response.body);
         message = response.body;
+        logger.d(responseData);
       } else {
         // 失敗
         message = 'Failed to access API.';
@@ -45,6 +51,7 @@ class _HomeState extends State<Home> {
           return AlertDialog(
             title: const Text('Result'),
             content: Text(message),
+            scrollable: true,
           );
         },
       );
