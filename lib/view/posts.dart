@@ -7,17 +7,20 @@ final logger = Logger();
 class Posts extends StatelessWidget {
   Posts({super.key});
 
-  final postsRepository = PostsRepository();
+  final _repository = PostsRepository();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: FutureBuilder(
-            future: postsRepository.fetchPosts(),
+            future: _repository.fetchPosts(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 // データあり
-                return const Center(child: Text('Fetch success.'));
+                final data = snapshot.data;
+                return ListView.builder(itemBuilder: (context, index) {
+                  return ListTile(title: Text(data![index].body));
+                });
               } else if (snapshot.hasError) {
                 // エラ-
                 return const Center(child: Text('Fetch faild.'));
