@@ -65,7 +65,7 @@ final GoRouter router = GoRouter(
           GoRoute(
             path: '/todos',
             pageBuilder: (BuildContext context, GoRouterState state) {
-              return _noneTransitionPage(child: const Todos());
+              return _noneTransitionPage(child: Todos());
             },
           ),
           GoRoute(
