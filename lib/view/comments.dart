@@ -22,9 +22,9 @@ class _CommentsState extends State<Comments> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 // データあり
-                // final data = snapshot.data;
+                final data = snapshot.data;
                 return ListView.builder(itemBuilder: (context, index) {
-                  return const ListTile(title: Text(''));
+                  return ListTile(title: Text(data![index].body));
                 });
               } else if (snapshot.hasError) {
                 logger.d(snapshot);

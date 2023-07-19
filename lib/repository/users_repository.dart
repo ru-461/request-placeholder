@@ -15,7 +15,6 @@ class UsersRepository {
 
     // GETリクエスト
     final http.Response response = await http.get(url);
-    logger.d(response.body);
     // ステータスコード確認
     if (response.statusCode == 200) {
       return compute(parseUsers, response.body);

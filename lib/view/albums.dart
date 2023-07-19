@@ -22,8 +22,9 @@ class _AlbumsState extends State<Albums> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 // データあり
+                final data = snapshot.data;
                 return ListView.builder(itemBuilder: (context, index) {
-                  return const ListTile(title: Text(''));
+                  return ListTile(title: Text(data![index].title));
                 });
               } else if (snapshot.hasError) {
                 // エラ-
