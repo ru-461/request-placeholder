@@ -4,9 +4,14 @@ import 'package:request_placeholder/repository/comments_repository.dart';
 
 final logger = Logger();
 
-class Comments extends StatelessWidget {
-  Comments({super.key});
+class Comments extends StatefulWidget {
+  const Comments({super.key});
 
+  @override
+  State<Comments> createState() => _CommentsState();
+}
+
+class _CommentsState extends State<Comments> {
   final _repository = CommentsRepository();
 
   @override

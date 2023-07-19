@@ -4,9 +4,14 @@ import 'package:request_placeholder/repository/Users_repository.dart';
 
 final logger = Logger();
 
-class Users extends StatelessWidget {
-  Users({super.key});
+class Users extends StatefulWidget {
+  const Users({super.key});
 
+  @override
+  State<Users> createState() => _UsersState();
+}
+
+class _UsersState extends State<Users> {
   final _repository = UsersRepository();
 
   @override

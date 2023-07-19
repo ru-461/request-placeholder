@@ -4,9 +4,14 @@ import 'package:request_placeholder/repository/posts_repository.dart';
 
 final logger = Logger();
 
-class Posts extends StatelessWidget {
-  Posts({super.key});
+class Posts extends StatefulWidget {
+  const Posts({super.key});
 
+  @override
+  State<Posts> createState() => _PostsState();
+}
+
+class _PostsState extends State<Posts> {
   final _repository = PostsRepository();
 
   @override

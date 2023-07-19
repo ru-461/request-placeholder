@@ -4,9 +4,14 @@ import 'package:request_placeholder/repository/photos_repository.dart';
 
 final logger = Logger();
 
-class Photos extends StatelessWidget {
-  Photos({super.key});
+class Photos extends StatefulWidget {
+  const Photos({super.key});
 
+  @override
+  State<Photos> createState() => _PhotosState();
+}
+
+class _PhotosState extends State<Photos> {
   final _repository = PhotosRepository();
 
   @override

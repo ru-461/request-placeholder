@@ -4,9 +4,14 @@ import 'package:request_placeholder/repository/todo_repository.dart';
 
 final logger = Logger();
 
-class Todos extends StatelessWidget {
-  Todos({super.key});
+class Todos extends StatefulWidget {
+  const Todos({super.key});
 
+  @override
+  State<Todos> createState() => _TodosState();
+}
+
+class _TodosState extends State<Todos> {
   final _repository = TodosRepository();
 
   @override

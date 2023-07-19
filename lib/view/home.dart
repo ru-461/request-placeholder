@@ -5,7 +5,6 @@ import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/constant/url.dart';
 
-// ロガー
 final logger = Logger();
 
 class Home extends StatefulWidget {
