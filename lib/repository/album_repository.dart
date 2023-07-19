@@ -4,30 +4,30 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/constant/url.dart';
-import 'package:request_placeholder/model/comments.dart';
+import 'package:request_placeholder/model/album.dart';
 
 final logger = Logger();
 
-class CommentsRepository {
-  Future<List<Comments>> fetchComments() async {
+class AlbumRepository {
+  Future<List<Album>> fetchAlbums() async {
     // URL
-    Uri url = Uri.parse(URL.comments);
+    Uri url = Uri.parse(URL.albums);
 
     // GETリクエスト
     final http.Response response = await http.get(url);
 
     // ステータスコード確認
     if (response.statusCode == 200) {
-      return compute(parseComments, response.body);
+      return compute(parseAlbums, response.body);
     } else {
-      throw Exception('Failed to fetch Comments');
+      throw Exception('Failed to fetch Albums');
     }
   }
 
-  // List<Comments>に変換
-  List<Comments> parseComments(String responseBody) {
+  // List<Album>に変換
+  List<Album> parseAlbums(String responseBody) {
     final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
 
-    return parsed.map<Comments>((json) => Comments.fromJson(json)).toList();
+    return parsed.map<Album>((json) => Album.fromJson(json)).toList();
   }
 }

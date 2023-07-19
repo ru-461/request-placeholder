@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'comments.dart';
+part of 'comment.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Comments _$CommentsFromJson(Map<String, dynamic> json) {
-  return _Comments.fromJson(json);
+Comment _$CommentFromJson(Map<String, dynamic> json) {
+  return _Comment.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Comments {
+mixin _$Comment {
   int get postId => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -28,22 +28,21 @@ mixin _$Comments {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CommentsCopyWith<Comments> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CommentCopyWith<Comment> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CommentsCopyWith<$Res> {
-  factory $CommentsCopyWith(Comments value, $Res Function(Comments) then) =
-      _$CommentsCopyWithImpl<$Res, Comments>;
+abstract class $CommentCopyWith<$Res> {
+  factory $CommentCopyWith(Comment value, $Res Function(Comment) then) =
+      _$CommentCopyWithImpl<$Res, Comment>;
   @useResult
   $Res call({int postId, int id, String name, String email, String body});
 }
 
 /// @nodoc
-class _$CommentsCopyWithImpl<$Res, $Val extends Comments>
-    implements $CommentsCopyWith<$Res> {
-  _$CommentsCopyWithImpl(this._value, this._then);
+class _$CommentCopyWithImpl<$Res, $Val extends Comment>
+    implements $CommentCopyWith<$Res> {
+  _$CommentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -85,21 +84,20 @@ class _$CommentsCopyWithImpl<$Res, $Val extends Comments>
 }
 
 /// @nodoc
-abstract class _$$_CommentsCopyWith<$Res> implements $CommentsCopyWith<$Res> {
-  factory _$$_CommentsCopyWith(
-          _$_Comments value, $Res Function(_$_Comments) then) =
-      __$$_CommentsCopyWithImpl<$Res>;
+abstract class _$$_CommentCopyWith<$Res> implements $CommentCopyWith<$Res> {
+  factory _$$_CommentCopyWith(
+          _$_Comment value, $Res Function(_$_Comment) then) =
+      __$$_CommentCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int postId, int id, String name, String email, String body});
 }
 
 /// @nodoc
-class __$$_CommentsCopyWithImpl<$Res>
-    extends _$CommentsCopyWithImpl<$Res, _$_Comments>
-    implements _$$_CommentsCopyWith<$Res> {
-  __$$_CommentsCopyWithImpl(
-      _$_Comments _value, $Res Function(_$_Comments) _then)
+class __$$_CommentCopyWithImpl<$Res>
+    extends _$CommentCopyWithImpl<$Res, _$_Comment>
+    implements _$$_CommentCopyWith<$Res> {
+  __$$_CommentCopyWithImpl(_$_Comment _value, $Res Function(_$_Comment) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -111,7 +109,7 @@ class __$$_CommentsCopyWithImpl<$Res>
     Object? email = null,
     Object? body = null,
   }) {
-    return _then(_$_Comments(
+    return _then(_$_Comment(
       postId: null == postId
           ? _value.postId
           : postId // ignore: cast_nullable_to_non_nullable
@@ -138,16 +136,16 @@ class __$$_CommentsCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Comments implements _Comments {
-  _$_Comments(
+class _$_Comment implements _Comment {
+  _$_Comment(
       {required this.postId,
       required this.id,
       required this.name,
       required this.email,
       required this.body});
 
-  factory _$_Comments.fromJson(Map<String, dynamic> json) =>
-      _$$_CommentsFromJson(json);
+  factory _$_Comment.fromJson(Map<String, dynamic> json) =>
+      _$$_CommentFromJson(json);
 
   @override
   final int postId;
@@ -162,14 +160,14 @@ class _$_Comments implements _Comments {
 
   @override
   String toString() {
-    return 'Comments(postId: $postId, id: $id, name: $name, email: $email, body: $body)';
+    return 'Comment(postId: $postId, id: $id, name: $name, email: $email, body: $body)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Comments &&
+            other is _$_Comment &&
             (identical(other.postId, postId) || other.postId == postId) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
@@ -184,26 +182,26 @@ class _$_Comments implements _Comments {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CommentsCopyWith<_$_Comments> get copyWith =>
-      __$$_CommentsCopyWithImpl<_$_Comments>(this, _$identity);
+  _$$_CommentCopyWith<_$_Comment> get copyWith =>
+      __$$_CommentCopyWithImpl<_$_Comment>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CommentsToJson(
+    return _$$_CommentToJson(
       this,
     );
   }
 }
 
-abstract class _Comments implements Comments {
-  factory _Comments(
+abstract class _Comment implements Comment {
+  factory _Comment(
       {required final int postId,
       required final int id,
       required final String name,
       required final String email,
-      required final String body}) = _$_Comments;
+      required final String body}) = _$_Comment;
 
-  factory _Comments.fromJson(Map<String, dynamic> json) = _$_Comments.fromJson;
+  factory _Comment.fromJson(Map<String, dynamic> json) = _$_Comment.fromJson;
 
   @override
   int get postId;
@@ -217,6 +215,6 @@ abstract class _Comments implements Comments {
   String get body;
   @override
   @JsonKey(ignore: true)
-  _$$_CommentsCopyWith<_$_Comments> get copyWith =>
+  _$$_CommentCopyWith<_$_Comment> get copyWith =>
       throw _privateConstructorUsedError;
 }

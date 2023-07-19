@@ -4,13 +4,13 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/constant/url.dart';
-import 'package:request_placeholder/model/todos.dart';
+import 'package:request_placeholder/model/todo.dart';
 
 // ロガー
 final logger = Logger();
 
-class TodosRepository {
-  Future<List<Todos>> fetchTodos() async {
+class TodoRepository {
+  Future<List<Todo>> fetchTodos() async {
     // URL
     Uri url = Uri.parse(URL.todos);
 
@@ -25,10 +25,10 @@ class TodosRepository {
     }
   }
 
-  // List<Todos>に変換
-  List<Todos> parseTodos(String responseBody) {
+  // List<Todo>に変換
+  List<Todo> parseTodos(String responseBody) {
     final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
 
-    return parsed.map<Todos>((json) => Todos.fromJson(json)).toList();
+    return parsed.map<Todo>((json) => Todo.fromJson(json)).toList();
   }
 }

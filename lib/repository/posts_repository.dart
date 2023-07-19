@@ -4,12 +4,12 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/constant/url.dart';
-import 'package:request_placeholder/model/posts.dart';
+import 'package:request_placeholder/model/post.dart';
 
 final logger = Logger();
 
-class PostsRepository {
-  Future<List<Posts>> fetchPosts() async {
+class PostRepository {
+  Future<List<Post>> fetchPosts() async {
     // URL
     Uri url = Uri.parse(URL.posts);
 
@@ -24,10 +24,10 @@ class PostsRepository {
     }
   }
 
-  // List<Posts>に変換
-  List<Posts> parsePosts(String responseBody) {
+  // List<Post>に変換
+  List<Post> parsePosts(String responseBody) {
     final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
 
-    return parsed.map<Posts>((json) => Posts.fromJson(json)).toList();
+    return parsed.map<Post>((json) => Post.fromJson(json)).toList();
   }
 }

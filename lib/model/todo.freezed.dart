@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'todos.dart';
+part of 'todo.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Todos _$TodosFromJson(Map<String, dynamic> json) {
-  return _Todos.fromJson(json);
+Todo _$TodoFromJson(Map<String, dynamic> json) {
+  return _Todo.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Todos {
+mixin _$Todo {
   int get userId => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
@@ -27,21 +27,21 @@ mixin _$Todos {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TodosCopyWith<Todos> get copyWith => throw _privateConstructorUsedError;
+  $TodoCopyWith<Todo> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TodosCopyWith<$Res> {
-  factory $TodosCopyWith(Todos value, $Res Function(Todos) then) =
-      _$TodosCopyWithImpl<$Res, Todos>;
+abstract class $TodoCopyWith<$Res> {
+  factory $TodoCopyWith(Todo value, $Res Function(Todo) then) =
+      _$TodoCopyWithImpl<$Res, Todo>;
   @useResult
   $Res call({int userId, int id, String title, bool completed});
 }
 
 /// @nodoc
-class _$TodosCopyWithImpl<$Res, $Val extends Todos>
-    implements $TodosCopyWith<$Res> {
-  _$TodosCopyWithImpl(this._value, this._then);
+class _$TodoCopyWithImpl<$Res, $Val extends Todo>
+    implements $TodoCopyWith<$Res> {
+  _$TodoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -78,18 +78,18 @@ class _$TodosCopyWithImpl<$Res, $Val extends Todos>
 }
 
 /// @nodoc
-abstract class _$$_TodosCopyWith<$Res> implements $TodosCopyWith<$Res> {
-  factory _$$_TodosCopyWith(_$_Todos value, $Res Function(_$_Todos) then) =
-      __$$_TodosCopyWithImpl<$Res>;
+abstract class _$$_TodoCopyWith<$Res> implements $TodoCopyWith<$Res> {
+  factory _$$_TodoCopyWith(_$_Todo value, $Res Function(_$_Todo) then) =
+      __$$_TodoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int userId, int id, String title, bool completed});
 }
 
 /// @nodoc
-class __$$_TodosCopyWithImpl<$Res> extends _$TodosCopyWithImpl<$Res, _$_Todos>
-    implements _$$_TodosCopyWith<$Res> {
-  __$$_TodosCopyWithImpl(_$_Todos _value, $Res Function(_$_Todos) _then)
+class __$$_TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res, _$_Todo>
+    implements _$$_TodoCopyWith<$Res> {
+  __$$_TodoCopyWithImpl(_$_Todo _value, $Res Function(_$_Todo) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -100,7 +100,7 @@ class __$$_TodosCopyWithImpl<$Res> extends _$TodosCopyWithImpl<$Res, _$_Todos>
     Object? title = null,
     Object? completed = null,
   }) {
-    return _then(_$_Todos(
+    return _then(_$_Todo(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -123,15 +123,14 @@ class __$$_TodosCopyWithImpl<$Res> extends _$TodosCopyWithImpl<$Res, _$_Todos>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Todos implements _Todos {
-  _$_Todos(
+class _$_Todo implements _Todo {
+  _$_Todo(
       {required this.userId,
       required this.id,
       required this.title,
       required this.completed});
 
-  factory _$_Todos.fromJson(Map<String, dynamic> json) =>
-      _$$_TodosFromJson(json);
+  factory _$_Todo.fromJson(Map<String, dynamic> json) => _$$_TodoFromJson(json);
 
   @override
   final int userId;
@@ -144,14 +143,14 @@ class _$_Todos implements _Todos {
 
   @override
   String toString() {
-    return 'Todos(userId: $userId, id: $id, title: $title, completed: $completed)';
+    return 'Todo(userId: $userId, id: $id, title: $title, completed: $completed)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Todos &&
+            other is _$_Todo &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
@@ -166,25 +165,25 @@ class _$_Todos implements _Todos {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TodosCopyWith<_$_Todos> get copyWith =>
-      __$$_TodosCopyWithImpl<_$_Todos>(this, _$identity);
+  _$$_TodoCopyWith<_$_Todo> get copyWith =>
+      __$$_TodoCopyWithImpl<_$_Todo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TodosToJson(
+    return _$$_TodoToJson(
       this,
     );
   }
 }
 
-abstract class _Todos implements Todos {
-  factory _Todos(
+abstract class _Todo implements Todo {
+  factory _Todo(
       {required final int userId,
       required final int id,
       required final String title,
-      required final bool completed}) = _$_Todos;
+      required final bool completed}) = _$_Todo;
 
-  factory _Todos.fromJson(Map<String, dynamic> json) = _$_Todos.fromJson;
+  factory _Todo.fromJson(Map<String, dynamic> json) = _$_Todo.fromJson;
 
   @override
   int get userId;
@@ -196,6 +195,5 @@ abstract class _Todos implements Todos {
   bool get completed;
   @override
   @JsonKey(ignore: true)
-  _$$_TodosCopyWith<_$_Todos> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_TodoCopyWith<_$_Todo> get copyWith => throw _privateConstructorUsedError;
 }

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'photos.dart';
+part of 'photo.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Photos _$PhotosFromJson(Map<String, dynamic> json) {
-  return _Photos.fromJson(json);
+Photo _$PhotoFromJson(Map<String, dynamic> json) {
+  return _Photo.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Photos {
+mixin _$Photo {
   int get albumId => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
@@ -28,22 +28,22 @@ mixin _$Photos {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PhotosCopyWith<Photos> get copyWith => throw _privateConstructorUsedError;
+  $PhotoCopyWith<Photo> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PhotosCopyWith<$Res> {
-  factory $PhotosCopyWith(Photos value, $Res Function(Photos) then) =
-      _$PhotosCopyWithImpl<$Res, Photos>;
+abstract class $PhotoCopyWith<$Res> {
+  factory $PhotoCopyWith(Photo value, $Res Function(Photo) then) =
+      _$PhotoCopyWithImpl<$Res, Photo>;
   @useResult
   $Res call(
       {int albumId, int id, String title, String url, String thumbnailUrl});
 }
 
 /// @nodoc
-class _$PhotosCopyWithImpl<$Res, $Val extends Photos>
-    implements $PhotosCopyWith<$Res> {
-  _$PhotosCopyWithImpl(this._value, this._then);
+class _$PhotoCopyWithImpl<$Res, $Val extends Photo>
+    implements $PhotoCopyWith<$Res> {
+  _$PhotoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -85,9 +85,9 @@ class _$PhotosCopyWithImpl<$Res, $Val extends Photos>
 }
 
 /// @nodoc
-abstract class _$$_PhotosCopyWith<$Res> implements $PhotosCopyWith<$Res> {
-  factory _$$_PhotosCopyWith(_$_Photos value, $Res Function(_$_Photos) then) =
-      __$$_PhotosCopyWithImpl<$Res>;
+abstract class _$$_PhotoCopyWith<$Res> implements $PhotoCopyWith<$Res> {
+  factory _$$_PhotoCopyWith(_$_Photo value, $Res Function(_$_Photo) then) =
+      __$$_PhotoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -95,10 +95,9 @@ abstract class _$$_PhotosCopyWith<$Res> implements $PhotosCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_PhotosCopyWithImpl<$Res>
-    extends _$PhotosCopyWithImpl<$Res, _$_Photos>
-    implements _$$_PhotosCopyWith<$Res> {
-  __$$_PhotosCopyWithImpl(_$_Photos _value, $Res Function(_$_Photos) _then)
+class __$$_PhotoCopyWithImpl<$Res> extends _$PhotoCopyWithImpl<$Res, _$_Photo>
+    implements _$$_PhotoCopyWith<$Res> {
+  __$$_PhotoCopyWithImpl(_$_Photo _value, $Res Function(_$_Photo) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -110,7 +109,7 @@ class __$$_PhotosCopyWithImpl<$Res>
     Object? url = null,
     Object? thumbnailUrl = null,
   }) {
-    return _then(_$_Photos(
+    return _then(_$_Photo(
       albumId: null == albumId
           ? _value.albumId
           : albumId // ignore: cast_nullable_to_non_nullable
@@ -137,16 +136,16 @@ class __$$_PhotosCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Photos implements _Photos {
-  _$_Photos(
+class _$_Photo implements _Photo {
+  _$_Photo(
       {required this.albumId,
       required this.id,
       required this.title,
       required this.url,
       required this.thumbnailUrl});
 
-  factory _$_Photos.fromJson(Map<String, dynamic> json) =>
-      _$$_PhotosFromJson(json);
+  factory _$_Photo.fromJson(Map<String, dynamic> json) =>
+      _$$_PhotoFromJson(json);
 
   @override
   final int albumId;
@@ -161,14 +160,14 @@ class _$_Photos implements _Photos {
 
   @override
   String toString() {
-    return 'Photos(albumId: $albumId, id: $id, title: $title, url: $url, thumbnailUrl: $thumbnailUrl)';
+    return 'Photo(albumId: $albumId, id: $id, title: $title, url: $url, thumbnailUrl: $thumbnailUrl)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Photos &&
+            other is _$_Photo &&
             (identical(other.albumId, albumId) || other.albumId == albumId) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
@@ -185,26 +184,26 @@ class _$_Photos implements _Photos {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PhotosCopyWith<_$_Photos> get copyWith =>
-      __$$_PhotosCopyWithImpl<_$_Photos>(this, _$identity);
+  _$$_PhotoCopyWith<_$_Photo> get copyWith =>
+      __$$_PhotoCopyWithImpl<_$_Photo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PhotosToJson(
+    return _$$_PhotoToJson(
       this,
     );
   }
 }
 
-abstract class _Photos implements Photos {
-  factory _Photos(
+abstract class _Photo implements Photo {
+  factory _Photo(
       {required final int albumId,
       required final int id,
       required final String title,
       required final String url,
-      required final String thumbnailUrl}) = _$_Photos;
+      required final String thumbnailUrl}) = _$_Photo;
 
-  factory _Photos.fromJson(Map<String, dynamic> json) = _$_Photos.fromJson;
+  factory _Photo.fromJson(Map<String, dynamic> json) = _$_Photo.fromJson;
 
   @override
   int get albumId;
@@ -218,6 +217,6 @@ abstract class _Photos implements Photos {
   String get thumbnailUrl;
   @override
   @JsonKey(ignore: true)
-  _$$_PhotosCopyWith<_$_Photos> get copyWith =>
+  _$$_PhotoCopyWith<_$_Photo> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/repository/Users_repository.dart';
+import 'package:request_placeholder/model/user.dart';
+import 'package:request_placeholder/repository/user_repository.dart';
 
 final logger = Logger();
 
@@ -12,27 +13,36 @@ class Users extends StatefulWidget {
 }
 
 class _UsersState extends State<Users> {
-  final _repository = UsersRepository();
+  late Future<List<User>> futureUsers;
+  final _repository = UserRepository();
+
+  @override
+  void initState() {
+    super.initState();
+    // フェッチ
+    futureUsers = _repository.fetchUsers();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: FutureBuilder(
-            future: _repository.fetchUsers(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                // データあり
-                final data = snapshot.data;
-                return ListView.builder(itemBuilder: (context, index) {
-                  return ListTile(title: Text(data![index].email));
-                });
-              } else if (snapshot.hasError) {
-                // エラ-
-                return const Center(child: Text('Fetch faild.'));
-              } else {
-                // データなし
-                return const Center(child: CircularProgressIndicator());
-              }
-            }));
+        body: Center(
+            child: FutureBuilder(
+                future: futureUsers,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    // データあり
+                    final data = snapshot.data;
+                    return ListView.builder(itemBuilder: (context, index) {
+                      return ListTile(title: Text(data![index].email));
+                    });
+                  } else if (snapshot.hasError) {
+                    // エラ-
+                    return const Text('Fetch faild.');
+                  } else {
+                    // データなし
+                    return const CircularProgressIndicator();
+                  }
+                })));
   }
 }

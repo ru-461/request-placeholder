@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'package:request_placeholder/model/post.dart';
 import 'package:request_placeholder/repository/posts_repository.dart';
 
 final logger = Logger();
@@ -12,27 +13,36 @@ class Posts extends StatefulWidget {
 }
 
 class _PostsState extends State<Posts> {
-  final _repository = PostsRepository();
+  late Future<List<Post>> futurePosts;
+  final _repository = PostRepository();
+
+  @override
+  void initState() {
+    super.initState();
+    // フェッチ
+    futurePosts = _repository.fetchPosts();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: FutureBuilder(
-            future: _repository.fetchPosts(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                // データあり
-                final data = snapshot.data;
-                return ListView.builder(itemBuilder: (context, index) {
-                  return ListTile(title: Text(data![index].title));
-                });
-              } else if (snapshot.hasError) {
-                // エラ-
-                return const Center(child: Text('Fetch faild.'));
-              } else {
-                // データなし
-                return const Center(child: CircularProgressIndicator());
-              }
-            }));
+        body: Center(
+            child: FutureBuilder(
+                future: futurePosts,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    // データあり
+                    final data = snapshot.data;
+                    return ListView.builder(itemBuilder: (context, index) {
+                      return ListTile(title: Text(data![index].title));
+                    });
+                  } else if (snapshot.hasError) {
+                    // エラ-
+                    return const Text('Fetch faild.');
+                  } else {
+                    // データなし
+                    return const CircularProgressIndicator();
+                  }
+                })));
   }
 }

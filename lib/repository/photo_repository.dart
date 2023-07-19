@@ -4,12 +4,12 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/constant/url.dart';
-import 'package:request_placeholder/model/photos.dart';
+import 'package:request_placeholder/model/photo.dart';
 
 final logger = Logger();
 
-class PhotosRepository {
-  Future<List<Photos>> fetchPhotos() async {
+class PhotoRepository {
+  Future<List<Photo>> fetchPhotos() async {
     // URL
     Uri url = Uri.parse(URL.photos);
 
@@ -24,10 +24,10 @@ class PhotosRepository {
     }
   }
 
-  // List<Photos>に変換
-  List<Photos> parsePhotos(String responseBody) {
+  // List<Photo>に変換
+  List<Photo> parsePhotos(String responseBody) {
     final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
 
-    return parsed.map<Photos>((json) => Photos.fromJson(json)).toList();
+    return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
   }
 }

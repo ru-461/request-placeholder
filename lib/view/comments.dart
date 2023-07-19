@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/repository/comments_repository.dart';
+import 'package:request_placeholder/model/comment.dart';
+import 'package:request_placeholder/repository/comment_repository.dart';
 
 final logger = Logger();
 
@@ -12,28 +13,37 @@ class Comments extends StatefulWidget {
 }
 
 class _CommentsState extends State<Comments> {
-  final _repository = CommentsRepository();
+  late Future<List<Comment>> futureComments;
+  final _repository = CommentRepository();
+
+  @override
+  void initState() {
+    super.initState();
+    // フェッチ
+    futureComments = _repository.fetchComments();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: FutureBuilder(
-            future: _repository.fetchComments(),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                // データあり
-                final data = snapshot.data;
-                return ListView.builder(itemBuilder: (context, index) {
-                  return ListTile(title: Text(data![index].body));
-                });
-              } else if (snapshot.hasError) {
-                logger.d(snapshot);
-                // エラ-
-                return const Center(child: Text('Fetch faild.'));
-              } else {
-                // データなし
-                return const Center(child: CircularProgressIndicator());
-              }
-            }));
+        body: Center(
+            child: FutureBuilder(
+                future: futureComments,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    // データあり
+                    final data = snapshot.data;
+                    return ListView.builder(itemBuilder: (context, index) {
+                      return ListTile(title: Text(data![index].body));
+                    });
+                  } else if (snapshot.hasError) {
+                    logger.d(snapshot);
+                    // エラ-
+                    return const Text('Fetch faild.');
+                  } else {
+                    // データなし
+                    return const CircularProgressIndicator();
+                  }
+                })));
   }
 }
