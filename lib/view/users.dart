@@ -1,77 +1,33 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/constant/url.dart';
+import 'package:request_placeholder/repository/Users_repository.dart';
 
-// ロガー
 final logger = Logger();
 
-class Users extends StatefulWidget {
-  const Users({super.key});
+class Users extends StatelessWidget {
+  Users({super.key});
 
-  @override
-  State<Users> createState() => _UsersState();
-}
-
-class _UsersState extends State<Users> {
-  Future<void> _fetchUsers() async {
-    // URL
-    String url = URL.users;
-    // レスポンス
-    String message = '';
-    dynamic responseData;
-
-    try {
-      // リクエスト開始
-      http.Response response = await http.get(Uri.parse(url));
-      logger.i(response.statusCode);
-
-      // ステータスコード確認
-      if (response.statusCode == 200) {
-        // 成功
-        responseData = jsonDecode(response.body);
-        message = response.body;
-        logger.d(responseData);
-      } else {
-        // 失敗
-        message = 'Failed to access API.';
-      }
-    } catch (error) {
-      // 例外
-      message = 'Request error.';
-    }
-
-    // ダイアログ表示
-    setState(() {
-      showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            title: const Text('Result'),
-            content: Text(message),
-            scrollable: true,
-          );
-        },
-      );
-    });
-  }
+  final _repository = UsersRepository();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-                onPressed: _fetchUsers,
-                style: ElevatedButton.styleFrom(),
-                child: const Text('Fetch'))
-          ],
-        ),
-      ),
-    );
+        body: FutureBuilder(
+            future: _repository.fetchUsers(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                // データあり
+                final data = snapshot.data;
+                return ListView.builder(itemBuilder: (context, index) {
+                  return ListTile(title: Text(data![index].email));
+                });
+              } else if (snapshot.hasError) {
+                // エラ-
+                return const Center(child: Text('Fetch faild.'));
+              } else {
+                // データなし
+                return const Center(child: CircularProgressIndicator());
+              }
+            }));
   }
 }

@@ -47,19 +47,19 @@ final GoRouter router = GoRouter(
           GoRoute(
             path: '/comments',
             pageBuilder: (BuildContext context, GoRouterState state) {
-              return _noneTransitionPage(child: const Comments());
+              return _noneTransitionPage(child: Comments());
             },
           ),
           GoRoute(
             path: '/albums',
             pageBuilder: (BuildContext context, GoRouterState state) {
-              return _noneTransitionPage(child: const Albums());
+              return _noneTransitionPage(child: Albums());
             },
           ),
           GoRoute(
             path: '/photos',
             pageBuilder: (BuildContext context, GoRouterState state) {
-              return _noneTransitionPage(child: const Photos());
+              return _noneTransitionPage(child: Photos());
             },
           ),
           GoRoute(
@@ -71,7 +71,7 @@ final GoRouter router = GoRouter(
           GoRoute(
             path: '/users',
             pageBuilder: (BuildContext context, GoRouterState state) {
-              return _noneTransitionPage(child: const Users());
+              return _noneTransitionPage(child: Users());
             },
           ),
         ])
