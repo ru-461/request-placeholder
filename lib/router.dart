@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:request_placeholder/view/Photos.dart';
-import 'package:request_placeholder/view/albums.dart';
-import 'package:request_placeholder/view/base.dart';
-import 'package:request_placeholder/view/comments.dart';
-import 'package:request_placeholder/view/home.dart';
-import 'package:request_placeholder/view/posts.dart';
-import 'package:request_placeholder/view/settings.dart';
-import 'package:request_placeholder/view/todos.dart';
-import 'package:request_placeholder/view/users.dart';
+import 'package:request_placeholder/views/albums.dart';
+import 'package:request_placeholder/views/base.dart';
+import 'package:request_placeholder/views/comments.dart';
+import 'package:request_placeholder/views/home.dart';
+import 'package:request_placeholder/views/posts.dart';
+import 'package:request_placeholder/views/settings.dart';
+import 'package:request_placeholder/views/todos.dart';
+import 'package:request_placeholder/views/users.dart';
 
 // キー
 final GlobalKey<NavigatorState> _rootNavigatorKey =

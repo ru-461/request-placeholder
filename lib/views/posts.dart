@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/model/post.dart';
+import 'package:request_placeholder/models/post.dart';
 import 'package:request_placeholder/repository/posts_repository.dart';
 
 final logger = Logger();

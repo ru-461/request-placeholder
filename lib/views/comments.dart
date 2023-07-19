@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/model/comment.dart';
+import 'package:request_placeholder/models/comment.dart';
 import 'package:request_placeholder/repository/comment_repository.dart';
 
 final logger = Logger();

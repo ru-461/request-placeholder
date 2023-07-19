@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/model/photo.dart';
+import 'package:request_placeholder/models/photo.dart';
 import 'package:request_placeholder/repository/photo_repository.dart';
 
 final logger = Logger();

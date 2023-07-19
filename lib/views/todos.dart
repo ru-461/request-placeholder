@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/model/todo.dart';
+import 'package:request_placeholder/models/todo.dart';
 import 'package:request_placeholder/repository/todo_repository.dart';
 
 final logger = Logger();

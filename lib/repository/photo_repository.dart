@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/constant/url.dart';
-import 'package:request_placeholder/model/photo.dart';
+import 'package:request_placeholder/constants/url.dart';
+import 'package:request_placeholder/models/photo.dart';
 
 final logger = Logger();
 
