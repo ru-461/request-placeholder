@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/constant/url.dart';
-import 'package:request_placeholder/model/Todos.dart';
+import 'package:request_placeholder/model/todos.dart';
 
 // ロガー
 final logger = Logger();

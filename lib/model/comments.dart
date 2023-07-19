@@ -1,23 +1,17 @@
-class Comments {
-  final int postId;
-  final int id;
-  final String name;
-  final String email;
-  final String body;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  Comments(
-      {required this.postId,
-      required this.id,
-      required this.name,
-      required this.email,
-      required this.body});
+part 'comments.freezed.dart';
+part 'comments.g.dart';
 
-  factory Comments.fromJson(Map<String, dynamic> json) {
-    return Comments(
-        postId: json['postId'] as int,
-        id: json['id'] as int,
-        name: json['name'] as String,
-        email: json['email'] as String,
-        body: json['body'] as String);
-  }
+@freezed
+class Comments with _$Comments {
+  factory Comments(
+      {required int postId,
+      required int id,
+      required String name,
+      required String email,
+      required String body}) = _Comments;
+
+  factory Comments.fromJson(Map<String, dynamic> json) =>
+      _$CommentsFromJson(json);
 }

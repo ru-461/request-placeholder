@@ -22,9 +22,9 @@ class _PhotosState extends State<Photos> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 // データあり
-                final data = snapshot.data;
+                // final data = snapshot.data;
                 return ListView.builder(itemBuilder: (context, index) {
-                  return ListTile(title: Text(data![index].title));
+                  return const ListTile(title: Text(''));
                 });
               } else if (snapshot.hasError) {
                 // エラ-

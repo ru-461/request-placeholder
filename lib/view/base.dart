@@ -12,7 +12,7 @@ class Base extends StatefulWidget {
   final Widget child;
 
   @override
-  _BaseState createState() => _BaseState();
+  State<Base> createState() => _BaseState();
 }
 
 class _BaseState extends State<Base> {

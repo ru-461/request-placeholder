@@ -1,14 +1,16 @@
-class Posts {
-  final int userId;
-  final int id;
-  final String body;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  Posts({required this.userId, required this.id, required this.body});
+part 'posts.freezed.dart';
+part 'posts.g.dart';
 
-  factory Posts.fromJson(Map<String, dynamic> json) {
-    return Posts(
-        userId: json['userId'] as int,
-        id: json['id'] as int,
-        body: json['body'] as String);
-  }
+@freezed
+class Posts with _$Posts {
+  factory Posts({
+    required int userId,
+    required int id,
+    required String title,
+    required String body,
+  }) = _Posts;
+
+  factory Posts.fromJson(Map<String, dynamic> json) => _$PostsFromJson(json);
 }

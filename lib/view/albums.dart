@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/repository/Albums_repository.dart';
+import 'package:request_placeholder/repository/albums_repository.dart';
 
 final logger = Logger();
 
@@ -22,9 +22,8 @@ class _AlbumsState extends State<Albums> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 // データあり
-                final data = snapshot.data;
                 return ListView.builder(itemBuilder: (context, index) {
-                  return ListTile(title: Text(data![index].title));
+                  return const ListTile(title: Text(''));
                 });
               } else if (snapshot.hasError) {
                 // エラ-

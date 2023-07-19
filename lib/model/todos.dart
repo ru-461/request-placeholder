@@ -1,20 +1,15 @@
-class Todos {
-  final int userId;
-  final int id;
-  final String title;
-  final bool completed;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  Todos(
-      {required this.userId,
-      required this.id,
-      required this.title,
-      required this.completed});
+part 'todos.freezed.dart';
+part 'todos.g.dart';
 
-  factory Todos.fromJson(Map<String, dynamic> json) {
-    return Todos(
-        userId: json['userId'] as int,
-        id: json['id'] as int,
-        title: json['title'] as String,
-        completed: json['completed'] as bool);
-  }
+@freezed
+class Todos with _$Todos {
+  factory Todos(
+      {required int userId,
+      required int id,
+      required String title,
+      required bool completed}) = _Todos;
+
+  factory Todos.fromJson(Map<String, dynamic> json) => _$TodosFromJson(json);
 }
