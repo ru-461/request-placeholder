@@ -32,9 +32,10 @@ class _UsersState extends State<Users> {
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
                     // データあり
-                    final data = snapshot.data;
+                    // final data = snapshot.data;
                     return ListView.builder(itemBuilder: (context, index) {
-                      return ListTile(title: Text(data![index].email));
+                      // final User user = data![index];
+                      return const Text('');
                     });
                   } else if (snapshot.hasError) {
                     // エラ-

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'package:request_placeholder/components/comment_view.dart';
 import 'package:request_placeholder/models/comment.dart';
 import 'package:request_placeholder/repository/comment_repository.dart';
 
@@ -34,10 +35,10 @@ class _CommentsState extends State<Comments> {
                     // データあり
                     final data = snapshot.data;
                     return ListView.builder(itemBuilder: (context, index) {
-                      return ListTile(title: Text(data![index].body));
+                      Comment comment = data![index];
+                      return CommentView(comment: comment);
                     });
                   } else if (snapshot.hasError) {
-                    logger.d(snapshot);
                     // エラ-
                     return const Text('Fetch faild.');
                   } else {

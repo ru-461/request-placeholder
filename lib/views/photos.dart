@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'package:request_placeholder/components/photo_view.dart';
 import 'package:request_placeholder/models/photo.dart';
 import 'package:request_placeholder/repository/photo_repository.dart';
 
@@ -19,6 +20,7 @@ class _PhotosState extends State<Photos> {
   @override
   void initState() {
     super.initState();
+    logger.d('OK');
     // フェッチ
     futurePhotos = _repository.fetchPhotos();
   }
@@ -34,7 +36,8 @@ class _PhotosState extends State<Photos> {
                     // データあり
                     final data = snapshot.data;
                     return ListView.builder(itemBuilder: (context, index) {
-                      return ListTile(title: Text(data![index].title));
+                      final Photo photo = data![index];
+                      return PhotoView(photo: photo);
                     });
                   } else if (snapshot.hasError) {
                     // エラ-

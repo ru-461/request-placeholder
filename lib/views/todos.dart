@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'package:request_placeholder/components/todo_view.dart';
 import 'package:request_placeholder/models/todo.dart';
 import 'package:request_placeholder/repository/todo_repository.dart';
 
@@ -34,7 +35,8 @@ class _TodosState extends State<Todos> {
                     // データあり
                     final data = snapshot.data;
                     return ListView.builder(itemBuilder: (context, index) {
-                      return ListTile(title: Text(data![index].title));
+                      final Todo todo = data![index];
+                      return TodoView(todo: todo);
                     });
                   } else if (snapshot.hasError) {
                     // エラ-

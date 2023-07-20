@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'package:request_placeholder/components/post_view.dart';
 import 'package:request_placeholder/models/post.dart';
 import 'package:request_placeholder/repository/posts_repository.dart';
 
@@ -34,7 +35,8 @@ class _PostsState extends State<Posts> {
                     // データあり
                     final data = snapshot.data;
                     return ListView.builder(itemBuilder: (context, index) {
-                      return ListTile(title: Text(data![index].title));
+                      Post post = data![index];
+                      return PostView(post: post);
                     });
                   } else if (snapshot.hasError) {
                     // エラ-

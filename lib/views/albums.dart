@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'package:request_placeholder/components/album_view.dart';
 import 'package:request_placeholder/models/album.dart';
 import 'package:request_placeholder/repository/album_repository.dart';
 
@@ -34,7 +35,8 @@ class _AlbumsState extends State<Albums> {
                     // データあり
                     final data = snapshot.data;
                     return ListView.builder(itemBuilder: (context, index) {
-                      return ListTile(title: Text(data![index].title));
+                      final Album album = data![index];
+                      return AlbumView(album: album);
                     });
                   } else if (snapshot.hasError) {
                     // エラ-
