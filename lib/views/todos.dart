@@ -28,24 +28,37 @@ class _TodosState extends State<Todos> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-            child: FutureBuilder(
-                future: futureTodos,
-                builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  if (snapshot.hasData) {
-                    // データあり
-                    final data = snapshot.data;
-                    return ListView.builder(
-                        itemBuilder: (BuildContext context, int index) {
-                      final Todo todo = data![index];
-                      return TodoView(todo: todo);
-                    });
-                  } else if (snapshot.hasError) {
-                    // エラ-
-                    return const Text('Fetch faild.');
-                  } else {
-                    // データなし
-                    return const CircularProgressIndicator();
-                  }
-                })));
+            child: RefreshIndicator(
+      onRefresh: () async {
+        // 再フェッチ
+        futureTodos = _repository.fetchTodos();
+        setState(() {});
+      },
+      child: FutureBuilder(
+          future: futureTodos,
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              // 待機中
+              return const CircularProgressIndicator();
+            } else if (snapshot.hasError) {
+              // エラー
+              return const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Error.'),
+                  ]);
+            } else {
+              // 成功時
+              final data = snapshot.data;
+
+              return ListView.builder(
+                  itemCount: data.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    Todo todo = data![index];
+                    return TodoView(todo: todo);
+                  });
+            }
+          }),
+    )));
   }
 }

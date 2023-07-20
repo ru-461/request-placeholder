@@ -29,24 +29,37 @@ class _PhotosState extends State<Photos> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-            child: FutureBuilder(
-                future: futurePhotos,
-                builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  if (snapshot.hasData) {
-                    // データあり
-                    final data = snapshot.data;
-                    return ListView.builder(
-                        itemBuilder: (BuildContext context, int index) {
-                      final Photo photo = data![index];
-                      return PhotoView(photo: photo);
-                    });
-                  } else if (snapshot.hasError) {
-                    // エラ-
-                    return const Text('Fetch faild.');
-                  } else {
-                    // データなし
-                    return const CircularProgressIndicator();
-                  }
-                })));
+            child: RefreshIndicator(
+      onRefresh: () async {
+        // 再フェッチ
+        futurePhotos = _repository.fetchPhotos();
+        setState(() {});
+      },
+      child: FutureBuilder(
+          future: futurePhotos,
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              // 待機中
+              return const CircularProgressIndicator();
+            } else if (snapshot.hasError) {
+              // エラー
+              return const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Error.'),
+                  ]);
+            } else {
+              // 成功時
+              final data = snapshot.data;
+
+              return ListView.builder(
+                  itemCount: data.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    Photo photo = data![index];
+                    return PhotoView(photo: photo);
+                  });
+            }
+          }),
+    )));
   }
 }

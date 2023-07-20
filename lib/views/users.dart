@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
+import 'package:request_placeholder/components/user_view.dart';
 import 'package:request_placeholder/models/user.dart';
 import 'package:request_placeholder/repository/user_repository.dart';
 
@@ -27,24 +28,37 @@ class _UsersState extends State<Users> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-            child: FutureBuilder(
-                future: futureUsers,
-                builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  if (snapshot.hasData) {
-                    // データあり
-                    // final data = snapshot.data;
-                    return ListView.builder(
-                        itemBuilder: (BuildContext context, int index) {
-                      // final User user = data![index];
-                      return const Text('');
-                    });
-                  } else if (snapshot.hasError) {
-                    // エラ-
-                    return const Text('Fetch faild.');
-                  } else {
-                    // データなし
-                    return const CircularProgressIndicator();
-                  }
-                })));
+            child: RefreshIndicator(
+      onRefresh: () async {
+        // 再フェッチ
+        futureUsers = _repository.fetchUsers();
+        setState(() {});
+      },
+      child: FutureBuilder(
+          future: futureUsers,
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              // 待機中
+              return const CircularProgressIndicator();
+            } else if (snapshot.hasError) {
+              // エラー
+              return const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Error.'),
+                  ]);
+            } else {
+              // 成功時
+              final data = snapshot.data;
+
+              return ListView.builder(
+                  itemCount: data.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    User user = data![index];
+                    return UserView(user: user);
+                  });
+            }
+          }),
+    )));
   }
 }

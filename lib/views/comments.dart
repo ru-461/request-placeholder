@@ -28,24 +28,37 @@ class _CommentsState extends State<Comments> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-            child: FutureBuilder(
-                future: futureComments,
-                builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  if (snapshot.hasData) {
-                    // データあり
-                    final data = snapshot.data;
-                    return ListView.builder(
-                        itemBuilder: (BuildContext context, int index) {
-                      Comment comment = data![index];
-                      return CommentView(comment: comment);
-                    });
-                  } else if (snapshot.hasError) {
-                    // エラ-
-                    return const Text('Fetch faild.');
-                  } else {
-                    // データなし
-                    return const CircularProgressIndicator();
-                  }
-                })));
+            child: RefreshIndicator(
+      onRefresh: () async {
+        // 再フェッチ
+        futureComments = _repository.fetchComments();
+        setState(() {});
+      },
+      child: FutureBuilder(
+          future: futureComments,
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              // 待機中
+              return const CircularProgressIndicator();
+            } else if (snapshot.hasError) {
+              // エラー
+              return const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Error.'),
+                  ]);
+            } else {
+              // 成功時
+              final data = snapshot.data;
+
+              return ListView.builder(
+                  itemCount: data.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    Comment comment = data![index];
+                    return CommentView(comment: comment);
+                  });
+            }
+          }),
+    )));
   }
 }

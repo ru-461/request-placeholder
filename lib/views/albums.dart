@@ -28,24 +28,37 @@ class _AlbumsState extends State<Albums> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-            child: FutureBuilder(
-                future: futureAlubums,
-                builder: (BuildContext context, AsyncSnapshot snapshot) {
-                  if (snapshot.hasData) {
-                    // データあり
-                    final data = snapshot.data;
-                    return ListView.builder(
-                        itemBuilder: (BuildContext context, int index) {
-                      final Album album = data![index];
-                      return AlbumView(album: album);
-                    });
-                  } else if (snapshot.hasError) {
-                    // エラ-
-                    return const Text('Fetch faild.');
-                  } else {
-                    // データなし
-                    return const CircularProgressIndicator();
-                  }
-                })));
+            child: RefreshIndicator(
+      onRefresh: () async {
+        // 再フェッチ
+        futureAlubums = _repository.fetchAlbums();
+        setState(() {});
+      },
+      child: FutureBuilder(
+          future: futureAlubums,
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              // 待機中
+              return const CircularProgressIndicator();
+            } else if (snapshot.hasError) {
+              // エラー
+              return const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('Error.'),
+                  ]);
+            } else {
+              // 成功時
+              final data = snapshot.data;
+
+              return ListView.builder(
+                  itemCount: data.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    Album album = data![index];
+                    return AlbumView(album: album);
+                  });
+            }
+          }),
+    )));
   }
 }
