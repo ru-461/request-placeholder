@@ -20,14 +20,14 @@ User _$UserFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$User {
-  int? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get username => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  Address? get address => throw _privateConstructorUsedError;
-  String? get phone => throw _privateConstructorUsedError;
-  String? get website => throw _privateConstructorUsedError;
-  Company? get company => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get username => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  Address get address => throw _privateConstructorUsedError;
+  String get phone => throw _privateConstructorUsedError;
+  String get website => throw _privateConstructorUsedError;
+  Company get company => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,17 +40,17 @@ abstract class $UserCopyWith<$Res> {
       _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
-      {int? id,
-      String? name,
-      String? username,
-      String? email,
-      Address? address,
-      String? phone,
-      String? website,
-      Company? company});
+      {int id,
+      String name,
+      String username,
+      String email,
+      Address address,
+      String phone,
+      String website,
+      Company company});
 
-  $AddressCopyWith<$Res>? get address;
-  $CompanyCopyWith<$Res>? get company;
+  $AddressCopyWith<$Res> get address;
+  $CompanyCopyWith<$Res> get company;
 }
 
 /// @nodoc
@@ -66,71 +66,63 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? username = freezed,
-    Object? email = freezed,
-    Object? address = freezed,
-    Object? phone = freezed,
-    Object? website = freezed,
-    Object? company = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? username = null,
+    Object? email = null,
+    Object? address = null,
+    Object? phone = null,
+    Object? website = null,
+    Object? company = null,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      username: freezed == username
+              as String,
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
+              as String,
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      address: freezed == address
+              as String,
+      address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as Address?,
-      phone: freezed == phone
+              as Address,
+      phone: null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      website: freezed == website
+              as String,
+      website: null == website
           ? _value.website
           : website // ignore: cast_nullable_to_non_nullable
-              as String?,
-      company: freezed == company
+              as String,
+      company: null == company
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
-              as Company?,
+              as Company,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $AddressCopyWith<$Res>? get address {
-    if (_value.address == null) {
-      return null;
-    }
-
-    return $AddressCopyWith<$Res>(_value.address!, (value) {
+  $AddressCopyWith<$Res> get address {
+    return $AddressCopyWith<$Res>(_value.address, (value) {
       return _then(_value.copyWith(address: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CompanyCopyWith<$Res>? get company {
-    if (_value.company == null) {
-      return null;
-    }
-
-    return $CompanyCopyWith<$Res>(_value.company!, (value) {
+  $CompanyCopyWith<$Res> get company {
+    return $CompanyCopyWith<$Res>(_value.company, (value) {
       return _then(_value.copyWith(company: value) as $Val);
     });
   }
@@ -143,19 +135,19 @@ abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int? id,
-      String? name,
-      String? username,
-      String? email,
-      Address? address,
-      String? phone,
-      String? website,
-      Company? company});
+      {int id,
+      String name,
+      String username,
+      String email,
+      Address address,
+      String phone,
+      String website,
+      Company company});
 
   @override
-  $AddressCopyWith<$Res>? get address;
+  $AddressCopyWith<$Res> get address;
   @override
-  $CompanyCopyWith<$Res>? get company;
+  $CompanyCopyWith<$Res> get company;
 }
 
 /// @nodoc
@@ -167,48 +159,48 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? username = freezed,
-    Object? email = freezed,
-    Object? address = freezed,
-    Object? phone = freezed,
-    Object? website = freezed,
-    Object? company = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? username = null,
+    Object? email = null,
+    Object? address = null,
+    Object? phone = null,
+    Object? website = null,
+    Object? company = null,
   }) {
     return _then(_$_User(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      username: freezed == username
+              as String,
+      username: null == username
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
+              as String,
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      address: freezed == address
+              as String,
+      address: null == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as Address?,
-      phone: freezed == phone
+              as Address,
+      phone: null == phone
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      website: freezed == website
+              as String,
+      website: null == website
           ? _value.website
           : website // ignore: cast_nullable_to_non_nullable
-              as String?,
-      company: freezed == company
+              as String,
+      company: null == company
           ? _value.company
           : company // ignore: cast_nullable_to_non_nullable
-              as Company?,
+              as Company,
     ));
   }
 }
@@ -217,33 +209,33 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
 @JsonSerializable()
 class _$_User implements _User {
   const _$_User(
-      {this.id,
-      this.name,
-      this.username,
-      this.email,
-      this.address,
-      this.phone,
-      this.website,
-      this.company});
+      {required this.id,
+      required this.name,
+      required this.username,
+      required this.email,
+      required this.address,
+      required this.phone,
+      required this.website,
+      required this.company});
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
   @override
-  final int? id;
+  final int id;
   @override
-  final String? name;
+  final String name;
   @override
-  final String? username;
+  final String username;
   @override
-  final String? email;
+  final String email;
   @override
-  final Address? address;
+  final Address address;
   @override
-  final String? phone;
+  final String phone;
   @override
-  final String? website;
+  final String website;
   @override
-  final Company? company;
+  final Company company;
 
   @override
   String toString() {
@@ -287,33 +279,33 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {final int? id,
-      final String? name,
-      final String? username,
-      final String? email,
-      final Address? address,
-      final String? phone,
-      final String? website,
-      final Company? company}) = _$_User;
+      {required final int id,
+      required final String name,
+      required final String username,
+      required final String email,
+      required final Address address,
+      required final String phone,
+      required final String website,
+      required final Company company}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
-  int? get id;
+  int get id;
   @override
-  String? get name;
+  String get name;
   @override
-  String? get username;
+  String get username;
   @override
-  String? get email;
+  String get email;
   @override
-  Address? get address;
+  Address get address;
   @override
-  String? get phone;
+  String get phone;
   @override
-  String? get website;
+  String get website;
   @override
-  Company? get company;
+  Company get company;
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
@@ -325,11 +317,11 @@ Address _$AddressFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Address {
-  String? get street => throw _privateConstructorUsedError;
-  String? get suite => throw _privateConstructorUsedError;
-  String? get city => throw _privateConstructorUsedError;
-  String? get zipcode => throw _privateConstructorUsedError;
-  Geo? get geo => throw _privateConstructorUsedError;
+  String get street => throw _privateConstructorUsedError;
+  String get suite => throw _privateConstructorUsedError;
+  String get city => throw _privateConstructorUsedError;
+  String get zipcode => throw _privateConstructorUsedError;
+  Geo get geo => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -342,9 +334,9 @@ abstract class $AddressCopyWith<$Res> {
       _$AddressCopyWithImpl<$Res, Address>;
   @useResult
   $Res call(
-      {String? street, String? suite, String? city, String? zipcode, Geo? geo});
+      {String street, String suite, String city, String zipcode, Geo geo});
 
-  $GeoCopyWith<$Res>? get geo;
+  $GeoCopyWith<$Res> get geo;
 }
 
 /// @nodoc
@@ -360,44 +352,40 @@ class _$AddressCopyWithImpl<$Res, $Val extends Address>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? street = freezed,
-    Object? suite = freezed,
-    Object? city = freezed,
-    Object? zipcode = freezed,
-    Object? geo = freezed,
+    Object? street = null,
+    Object? suite = null,
+    Object? city = null,
+    Object? zipcode = null,
+    Object? geo = null,
   }) {
     return _then(_value.copyWith(
-      street: freezed == street
+      street: null == street
           ? _value.street
           : street // ignore: cast_nullable_to_non_nullable
-              as String?,
-      suite: freezed == suite
+              as String,
+      suite: null == suite
           ? _value.suite
           : suite // ignore: cast_nullable_to_non_nullable
-              as String?,
-      city: freezed == city
+              as String,
+      city: null == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
-              as String?,
-      zipcode: freezed == zipcode
+              as String,
+      zipcode: null == zipcode
           ? _value.zipcode
           : zipcode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      geo: freezed == geo
+              as String,
+      geo: null == geo
           ? _value.geo
           : geo // ignore: cast_nullable_to_non_nullable
-              as Geo?,
+              as Geo,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $GeoCopyWith<$Res>? get geo {
-    if (_value.geo == null) {
-      return null;
-    }
-
-    return $GeoCopyWith<$Res>(_value.geo!, (value) {
+  $GeoCopyWith<$Res> get geo {
+    return $GeoCopyWith<$Res>(_value.geo, (value) {
       return _then(_value.copyWith(geo: value) as $Val);
     });
   }
@@ -411,10 +399,10 @@ abstract class _$$_AddressCopyWith<$Res> implements $AddressCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? street, String? suite, String? city, String? zipcode, Geo? geo});
+      {String street, String suite, String city, String zipcode, Geo geo});
 
   @override
-  $GeoCopyWith<$Res>? get geo;
+  $GeoCopyWith<$Res> get geo;
 }
 
 /// @nodoc
@@ -427,33 +415,33 @@ class __$$_AddressCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? street = freezed,
-    Object? suite = freezed,
-    Object? city = freezed,
-    Object? zipcode = freezed,
-    Object? geo = freezed,
+    Object? street = null,
+    Object? suite = null,
+    Object? city = null,
+    Object? zipcode = null,
+    Object? geo = null,
   }) {
     return _then(_$_Address(
-      street: freezed == street
+      street: null == street
           ? _value.street
           : street // ignore: cast_nullable_to_non_nullable
-              as String?,
-      suite: freezed == suite
+              as String,
+      suite: null == suite
           ? _value.suite
           : suite // ignore: cast_nullable_to_non_nullable
-              as String?,
-      city: freezed == city
+              as String,
+      city: null == city
           ? _value.city
           : city // ignore: cast_nullable_to_non_nullable
-              as String?,
-      zipcode: freezed == zipcode
+              as String,
+      zipcode: null == zipcode
           ? _value.zipcode
           : zipcode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      geo: freezed == geo
+              as String,
+      geo: null == geo
           ? _value.geo
           : geo // ignore: cast_nullable_to_non_nullable
-              as Geo?,
+              as Geo,
     ));
   }
 }
@@ -462,21 +450,25 @@ class __$$_AddressCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Address implements _Address {
   const _$_Address(
-      {this.street, this.suite, this.city, this.zipcode, this.geo});
+      {required this.street,
+      required this.suite,
+      required this.city,
+      required this.zipcode,
+      required this.geo});
 
   factory _$_Address.fromJson(Map<String, dynamic> json) =>
       _$$_AddressFromJson(json);
 
   @override
-  final String? street;
+  final String street;
   @override
-  final String? suite;
+  final String suite;
   @override
-  final String? city;
+  final String city;
   @override
-  final String? zipcode;
+  final String zipcode;
   @override
-  final Geo? geo;
+  final Geo geo;
 
   @override
   String toString() {
@@ -516,24 +508,24 @@ class _$_Address implements _Address {
 
 abstract class _Address implements Address {
   const factory _Address(
-      {final String? street,
-      final String? suite,
-      final String? city,
-      final String? zipcode,
-      final Geo? geo}) = _$_Address;
+      {required final String street,
+      required final String suite,
+      required final String city,
+      required final String zipcode,
+      required final Geo geo}) = _$_Address;
 
   factory _Address.fromJson(Map<String, dynamic> json) = _$_Address.fromJson;
 
   @override
-  String? get street;
+  String get street;
   @override
-  String? get suite;
+  String get suite;
   @override
-  String? get city;
+  String get city;
   @override
-  String? get zipcode;
+  String get zipcode;
   @override
-  Geo? get geo;
+  Geo get geo;
   @override
   @JsonKey(ignore: true)
   _$$_AddressCopyWith<_$_Address> get copyWith =>
@@ -546,8 +538,8 @@ Geo _$GeoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Geo {
-  String? get lat => throw _privateConstructorUsedError;
-  String? get lng => throw _privateConstructorUsedError;
+  String get lat => throw _privateConstructorUsedError;
+  String get lng => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -559,7 +551,7 @@ abstract class $GeoCopyWith<$Res> {
   factory $GeoCopyWith(Geo value, $Res Function(Geo) then) =
       _$GeoCopyWithImpl<$Res, Geo>;
   @useResult
-  $Res call({String? lat, String? lng});
+  $Res call({String lat, String lng});
 }
 
 /// @nodoc
@@ -574,18 +566,18 @@ class _$GeoCopyWithImpl<$Res, $Val extends Geo> implements $GeoCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lat = freezed,
-    Object? lng = freezed,
+    Object? lat = null,
+    Object? lng = null,
   }) {
     return _then(_value.copyWith(
-      lat: freezed == lat
+      lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lng: freezed == lng
+              as String,
+      lng: null == lng
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -596,7 +588,7 @@ abstract class _$$_GeoCopyWith<$Res> implements $GeoCopyWith<$Res> {
       __$$_GeoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? lat, String? lng});
+  $Res call({String lat, String lng});
 }
 
 /// @nodoc
@@ -608,18 +600,18 @@ class __$$_GeoCopyWithImpl<$Res> extends _$GeoCopyWithImpl<$Res, _$_Geo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lat = freezed,
-    Object? lng = freezed,
+    Object? lat = null,
+    Object? lng = null,
   }) {
     return _then(_$_Geo(
-      lat: freezed == lat
+      lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lng: freezed == lng
+              as String,
+      lng: null == lng
           ? _value.lng
           : lng // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -627,14 +619,14 @@ class __$$_GeoCopyWithImpl<$Res> extends _$GeoCopyWithImpl<$Res, _$_Geo>
 /// @nodoc
 @JsonSerializable()
 class _$_Geo implements _Geo {
-  const _$_Geo({this.lat, this.lng});
+  const _$_Geo({required this.lat, required this.lng});
 
   factory _$_Geo.fromJson(Map<String, dynamic> json) => _$$_GeoFromJson(json);
 
   @override
-  final String? lat;
+  final String lat;
   @override
-  final String? lng;
+  final String lng;
 
   @override
   String toString() {
@@ -669,14 +661,15 @@ class _$_Geo implements _Geo {
 }
 
 abstract class _Geo implements Geo {
-  const factory _Geo({final String? lat, final String? lng}) = _$_Geo;
+  const factory _Geo({required final String lat, required final String lng}) =
+      _$_Geo;
 
   factory _Geo.fromJson(Map<String, dynamic> json) = _$_Geo.fromJson;
 
   @override
-  String? get lat;
+  String get lat;
   @override
-  String? get lng;
+  String get lng;
   @override
   @JsonKey(ignore: true)
   _$$_GeoCopyWith<_$_Geo> get copyWith => throw _privateConstructorUsedError;
@@ -688,9 +681,9 @@ Company _$CompanyFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Company {
-  String? get name => throw _privateConstructorUsedError;
-  String? get catchPhrase => throw _privateConstructorUsedError;
-  String? get bs => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get catchPhrase => throw _privateConstructorUsedError;
+  String get bs => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -702,7 +695,7 @@ abstract class $CompanyCopyWith<$Res> {
   factory $CompanyCopyWith(Company value, $Res Function(Company) then) =
       _$CompanyCopyWithImpl<$Res, Company>;
   @useResult
-  $Res call({String? name, String? catchPhrase, String? bs});
+  $Res call({String name, String catchPhrase, String bs});
 }
 
 /// @nodoc
@@ -718,23 +711,23 @@ class _$CompanyCopyWithImpl<$Res, $Val extends Company>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? catchPhrase = freezed,
-    Object? bs = freezed,
+    Object? name = null,
+    Object? catchPhrase = null,
+    Object? bs = null,
   }) {
     return _then(_value.copyWith(
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      catchPhrase: freezed == catchPhrase
+              as String,
+      catchPhrase: null == catchPhrase
           ? _value.catchPhrase
           : catchPhrase // ignore: cast_nullable_to_non_nullable
-              as String?,
-      bs: freezed == bs
+              as String,
+      bs: null == bs
           ? _value.bs
           : bs // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -746,7 +739,7 @@ abstract class _$$_CompanyCopyWith<$Res> implements $CompanyCopyWith<$Res> {
       __$$_CompanyCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name, String? catchPhrase, String? bs});
+  $Res call({String name, String catchPhrase, String bs});
 }
 
 /// @nodoc
@@ -759,23 +752,23 @@ class __$$_CompanyCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? catchPhrase = freezed,
-    Object? bs = freezed,
+    Object? name = null,
+    Object? catchPhrase = null,
+    Object? bs = null,
   }) {
     return _then(_$_Company(
-      name: freezed == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      catchPhrase: freezed == catchPhrase
+              as String,
+      catchPhrase: null == catchPhrase
           ? _value.catchPhrase
           : catchPhrase // ignore: cast_nullable_to_non_nullable
-              as String?,
-      bs: freezed == bs
+              as String,
+      bs: null == bs
           ? _value.bs
           : bs // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -783,17 +776,18 @@ class __$$_CompanyCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Company implements _Company {
-  const _$_Company({this.name, this.catchPhrase, this.bs});
+  const _$_Company(
+      {required this.name, required this.catchPhrase, required this.bs});
 
   factory _$_Company.fromJson(Map<String, dynamic> json) =>
       _$$_CompanyFromJson(json);
 
   @override
-  final String? name;
+  final String name;
   @override
-  final String? catchPhrase;
+  final String catchPhrase;
   @override
-  final String? bs;
+  final String bs;
 
   @override
   String toString() {
@@ -831,18 +825,18 @@ class _$_Company implements _Company {
 
 abstract class _Company implements Company {
   const factory _Company(
-      {final String? name,
-      final String? catchPhrase,
-      final String? bs}) = _$_Company;
+      {required final String name,
+      required final String catchPhrase,
+      required final String bs}) = _$_Company;
 
   factory _Company.fromJson(Map<String, dynamic> json) = _$_Company.fromJson;
 
   @override
-  String? get name;
+  String get name;
   @override
-  String? get catchPhrase;
+  String get catchPhrase;
   @override
-  String? get bs;
+  String get bs;
   @override
   @JsonKey(ignore: true)
   _$$_CompanyCopyWith<_$_Company> get copyWith =>

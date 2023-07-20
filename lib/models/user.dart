@@ -6,14 +6,14 @@ part 'user.g.dart';
 @freezed
 class User with _$User {
   const factory User({
-    int? id,
-    String? name,
-    String? username,
-    String? email,
-    Address? address,
-    String? phone,
-    String? website,
-    Company? company,
+    required int id,
+    required String name,
+    required String username,
+    required String email,
+    required Address address,
+    required String phone,
+    required String website,
+    required Company company,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
@@ -22,11 +22,11 @@ class User with _$User {
 @freezed
 class Address with _$Address {
   const factory Address({
-    String? street,
-    String? suite,
-    String? city,
-    String? zipcode,
-    Geo? geo,
+    required String street,
+    required String suite,
+    required String city,
+    required String zipcode,
+    required Geo geo,
   }) = _Address;
 
   factory Address.fromJson(Map<String, dynamic> json) =>
@@ -36,8 +36,8 @@ class Address with _$Address {
 @freezed
 class Geo with _$Geo {
   const factory Geo({
-    String? lat,
-    String? lng,
+    required String lat,
+    required String lng,
   }) = _Geo;
 
   factory Geo.fromJson(Map<String, dynamic> json) => _$GeoFromJson(json);
@@ -46,9 +46,9 @@ class Geo with _$Geo {
 @freezed
 class Company with _$Company {
   const factory Company({
-    String? name,
-    String? catchPhrase,
-    String? bs,
+    required String name,
+    required String catchPhrase,
+    required String bs,
   }) = _Company;
 
   factory Company.fromJson(Map<String, dynamic> json) =>
