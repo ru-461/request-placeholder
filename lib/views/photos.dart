@@ -54,7 +54,7 @@ class _PhotosState extends State<Photos> {
               return ListView.builder(
                   itemCount: data.length,
                   itemBuilder: (BuildContext context, int index) {
-                    Photo photo = data![index];
+                    Photo photo = data[index];
                     return PhotoView(photo: photo);
                   });
             }

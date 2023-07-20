@@ -54,7 +54,7 @@ class _CommentsState extends State<Comments> {
               return ListView.builder(
                   itemCount: data.length,
                   itemBuilder: (BuildContext context, int index) {
-                    Comment comment = data![index];
+                    Comment comment = data[index];
                     return CommentView(comment: comment);
                   });
             }

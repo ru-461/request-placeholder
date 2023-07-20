@@ -54,7 +54,7 @@ class _TodosState extends State<Todos> {
               return ListView.builder(
                   itemCount: data.length,
                   itemBuilder: (BuildContext context, int index) {
-                    Todo todo = data![index];
+                    Todo todo = data[index];
                     return TodoView(todo: todo);
                   });
             }

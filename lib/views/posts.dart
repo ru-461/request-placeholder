@@ -55,7 +55,7 @@ class _PostsState extends State<Posts> {
               return ListView.builder(
                   itemCount: data.length,
                   itemBuilder: (BuildContext context, int index) {
-                    Post post = data![index];
+                    Post post = data[index];
                     return PostView(post: post);
                   });
             }

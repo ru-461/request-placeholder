@@ -55,7 +55,7 @@ class _AlbumsState extends State<Albums> {
               return ListView.builder(
                   itemCount: data.length,
                   itemBuilder: (BuildContext context, int index) {
-                    Album album = data![index];
+                    Album album = data[index];
                     return AlbumView(album: album);
                   });
             }

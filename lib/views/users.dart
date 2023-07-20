@@ -55,7 +55,7 @@ class _UsersState extends State<Users> {
               return ListView.builder(
                   itemCount: data.length,
                   itemBuilder: (BuildContext context, int index) {
-                    User user = data![index];
+                    User user = data[index];
                     return UserView(user: user);
                   });
             }
