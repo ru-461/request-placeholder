@@ -20,16 +20,14 @@ class _PhotosState extends State<Photos> {
   @override
   void initState() {
     super.initState();
-    logger.d('OK');
     // フェッチ
     futurePhotos = _repository.fetchPhotos();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Center(
-            child: RefreshIndicator(
+    return Center(
+        child: RefreshIndicator(
       onRefresh: () async {
         // 再フェッチ
         futurePhotos = _repository.fetchPhotos();
@@ -40,14 +38,15 @@ class _PhotosState extends State<Photos> {
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中
-              return const CircularProgressIndicator();
+              return const Center(child: CircularProgressIndicator());
             } else if (snapshot.hasError) {
               // エラー
-              return const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+              return const Center(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
                     Text('Error.'),
-                  ]);
+                  ]));
             } else {
               // 成功時
               final data = snapshot.data;
@@ -60,6 +59,6 @@ class _PhotosState extends State<Photos> {
                   });
             }
           }),
-    )));
+    ));
   }
 }

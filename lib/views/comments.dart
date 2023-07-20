@@ -27,8 +27,7 @@ class _CommentsState extends State<Comments> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-            child: RefreshIndicator(
+        body: RefreshIndicator(
       onRefresh: () async {
         // 再フェッチ
         futureComments = _repository.fetchComments();
@@ -39,14 +38,15 @@ class _CommentsState extends State<Comments> {
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中
-              return const CircularProgressIndicator();
+              return const Center(child: CircularProgressIndicator());
             } else if (snapshot.hasError) {
               // エラー
-              return const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+              return const Center(
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
                     Text('Error.'),
-                  ]);
+                  ]));
             } else {
               // 成功時
               final data = snapshot.data;
@@ -59,6 +59,6 @@ class _CommentsState extends State<Comments> {
                   });
             }
           }),
-    )));
+    ));
   }
 }

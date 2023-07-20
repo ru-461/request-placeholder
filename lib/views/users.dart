@@ -26,9 +26,8 @@ class _UsersState extends State<Users> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Center(
-            child: RefreshIndicator(
+    return Center(
+        child: RefreshIndicator(
       onRefresh: () async {
         // 再フェッチ
         futureUsers = _repository.fetchUsers();
@@ -42,11 +41,13 @@ class _UsersState extends State<Users> {
               return const CircularProgressIndicator();
             } else if (snapshot.hasError) {
               // エラー
-              return const Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Error.'),
-                  ]);
+              return const Center(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Error.'),
+                    ]),
+              );
             } else {
               // 成功時
               final data = snapshot.data;
@@ -59,6 +60,6 @@ class _UsersState extends State<Users> {
                   });
             }
           }),
-    )));
+    ));
   }
 }
