@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:request_placeholder/models/User.dart';
+import 'package:request_placeholder/models/user.dart';
 
 class UserView extends StatelessWidget {
   final User user;
@@ -7,19 +7,19 @@ class UserView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         ListTile(
           title: Text(
-            '',
-            style: TextStyle(fontSize: 10),
+            user.name,
+            style: const TextStyle(fontSize: 18),
           ),
           subtitle: Text(
-            '',
-            style: TextStyle(fontSize: 15),
+            user.email,
+            style: const TextStyle(fontSize: 14),
           ),
         ),
-        Divider()
+        const Divider()
       ],
     );
   }
