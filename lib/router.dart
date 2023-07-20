@@ -27,8 +27,8 @@ final GoRouter router = GoRouter(
         routes: <RouteBase>[
           GoRoute(
             path: '/home',
-            builder: (BuildContext context, GoRouterState state) {
-              return const Home();
+            pageBuilder: (BuildContext context, GoRouterState state) {
+              return _noneTransitionPage(child: const Home());
             },
           ),
           GoRoute(

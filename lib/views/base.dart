@@ -17,13 +17,16 @@ class Base extends StatefulWidget {
 
 class _BaseState extends State<Base> {
   int _selectedIndex = 0;
-  String _pageTitle = '';
+  String _pageTitle = 'Posts';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_pageTitle),
+        title: Text(
+          _pageTitle,
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
+        ),
         centerTitle: true,
         backgroundColor: const Color.fromRGBO(16, 185, 129, 1),
         leading: IconButton(
