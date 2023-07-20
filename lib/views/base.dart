@@ -29,11 +29,6 @@ class _BaseState extends State<Base> {
         leading: IconButton(
             onPressed: () => {context.push('/home')},
             icon: const Icon(Icons.home)),
-        actions: [
-          IconButton(
-              onPressed: () => {context.push('/settings')},
-              icon: const Icon(Icons.settings))
-        ],
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex,

@@ -6,7 +6,6 @@ import 'package:request_placeholder/views/base.dart';
 import 'package:request_placeholder/views/comments.dart';
 import 'package:request_placeholder/views/home.dart';
 import 'package:request_placeholder/views/posts.dart';
-import 'package:request_placeholder/views/settings.dart';
 import 'package:request_placeholder/views/todos.dart';
 import 'package:request_placeholder/views/users.dart';
 
@@ -30,12 +29,6 @@ final GoRouter router = GoRouter(
             path: '/home',
             builder: (BuildContext context, GoRouterState state) {
               return const Home();
-            },
-          ),
-          GoRoute(
-            path: '/settings',
-            builder: (BuildContext context, GoRouterState state) {
-              return const Settings();
             },
           ),
           GoRoute(
