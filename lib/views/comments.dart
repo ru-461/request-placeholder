@@ -30,11 +30,12 @@ class _CommentsState extends State<Comments> {
         body: Center(
             child: FutureBuilder(
                 future: futureComments,
-                builder: (context, snapshot) {
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (snapshot.hasData) {
                     // データあり
                     final data = snapshot.data;
-                    return ListView.builder(itemBuilder: (context, index) {
+                    return ListView.builder(
+                        itemBuilder: (BuildContext context, int index) {
                       Comment comment = data![index];
                       return CommentView(comment: comment);
                     });

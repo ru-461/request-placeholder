@@ -31,11 +31,12 @@ class _PhotosState extends State<Photos> {
         body: Center(
             child: FutureBuilder(
                 future: futurePhotos,
-                builder: (context, snapshot) {
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (snapshot.hasData) {
                     // データあり
                     final data = snapshot.data;
-                    return ListView.builder(itemBuilder: (context, index) {
+                    return ListView.builder(
+                        itemBuilder: (BuildContext context, int index) {
                       final Photo photo = data![index];
                       return PhotoView(photo: photo);
                     });

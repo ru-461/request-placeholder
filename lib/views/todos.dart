@@ -30,11 +30,12 @@ class _TodosState extends State<Todos> {
         body: Center(
             child: FutureBuilder(
                 future: futureTodos,
-                builder: (context, snapshot) {
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (snapshot.hasData) {
                     // データあり
                     final data = snapshot.data;
-                    return ListView.builder(itemBuilder: (context, index) {
+                    return ListView.builder(
+                        itemBuilder: (BuildContext context, int index) {
                       final Todo todo = data![index];
                       return TodoView(todo: todo);
                     });

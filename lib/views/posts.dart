@@ -30,11 +30,12 @@ class _PostsState extends State<Posts> {
         body: Center(
             child: FutureBuilder(
                 future: futurePosts,
-                builder: (context, snapshot) {
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (snapshot.hasData) {
                     // データあり
                     final data = snapshot.data;
-                    return ListView.builder(itemBuilder: (context, index) {
+                    return ListView.builder(
+                        itemBuilder: (BuildContext context, int index) {
                       Post post = data![index];
                       return PostView(post: post);
                     });

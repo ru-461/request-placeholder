@@ -29,11 +29,12 @@ class _UsersState extends State<Users> {
         body: Center(
             child: FutureBuilder(
                 future: futureUsers,
-                builder: (context, snapshot) {
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (snapshot.hasData) {
                     // データあり
                     // final data = snapshot.data;
-                    return ListView.builder(itemBuilder: (context, index) {
+                    return ListView.builder(
+                        itemBuilder: (BuildContext context, int index) {
                       // final User user = data![index];
                       return const Text('');
                     });

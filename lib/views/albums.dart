@@ -30,11 +30,12 @@ class _AlbumsState extends State<Albums> {
         body: Center(
             child: FutureBuilder(
                 future: futureAlubums,
-                builder: (context, snapshot) {
+                builder: (BuildContext context, AsyncSnapshot snapshot) {
                   if (snapshot.hasData) {
                     // データあり
                     final data = snapshot.data;
-                    return ListView.builder(itemBuilder: (context, index) {
+                    return ListView.builder(
+                        itemBuilder: (BuildContext context, int index) {
                       final Album album = data![index];
                       return AlbumView(album: album);
                     });
