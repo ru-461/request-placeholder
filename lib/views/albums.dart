@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/components/album_view.dart';
+import 'package:request_placeholder/components/album_item.dart';
 import 'package:request_placeholder/models/album.dart';
 import 'package:request_placeholder/repository/album_repository.dart';
 

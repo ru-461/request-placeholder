@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/components/user_view.dart';
+import 'package:request_placeholder/components/user_item.dart';
 import 'package:request_placeholder/models/user.dart';
 import 'package:request_placeholder/repository/user_repository.dart';
 

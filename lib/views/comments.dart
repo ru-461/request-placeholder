@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/components/comment_view.dart';
+import 'package:request_placeholder/components/comment_item.dart';
 import 'package:request_placeholder/models/comment.dart';
 import 'package:request_placeholder/repository/comment_repository.dart';
 

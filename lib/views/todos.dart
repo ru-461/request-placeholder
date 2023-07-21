@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/components/todo_view.dart';
+import 'package:request_placeholder/components/todo_item.dart';
 import 'package:request_placeholder/models/todo.dart';
 import 'package:request_placeholder/repository/todo_repository.dart';
 
