@@ -9,21 +9,26 @@ class TodoView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListTile(
-          leading: Checkbox(
-            value: todo.completed,
-            onChanged: (newValue) {},
+        Card(
+          elevation: 5,
+          child: ListTile(
+            leading: Checkbox(
+              value: todo.completed,
+              onChanged: (newValue) {},
+            ),
+            title: Text(
+              todo.title,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            subtitle: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5.0),
+              child: Text(
+                todo.title,
+                style: const TextStyle(fontSize: 15),
+              ),
+            ),
           ),
-          title: Text(
-            todo.title,
-            style: const TextStyle(fontSize: 18),
-          ),
-          subtitle: Text(
-            todo.title,
-            style: const TextStyle(fontSize: 14),
-          ),
-        ),
-        const Divider()
+        )
       ],
     );
   }

@@ -9,17 +9,22 @@ class UserView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListTile(
-          title: Text(
-            user.name,
-            style: const TextStyle(fontSize: 18),
-          ),
-          subtitle: Text(
-            user.email,
-            style: const TextStyle(fontSize: 14),
-          ),
-        ),
-        const Divider()
+        Card(
+            elevation: 5,
+            child: ListTile(
+              title: Text(
+                user.name,
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5.0),
+                child: Text(
+                  user.email,
+                  style: const TextStyle(fontSize: 15),
+                ),
+              ),
+            ))
       ],
     );
   }

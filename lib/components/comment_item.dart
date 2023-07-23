@@ -9,17 +9,22 @@ class CommentView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListTile(
-          title: Text(
-            comment.name,
-            style: const TextStyle(fontSize: 18),
-          ),
-          subtitle: Text(
-            comment.body,
-            style: const TextStyle(fontSize: 14),
+        Card(
+          elevation: 5,
+          child: ListTile(
+            title: Text(
+              comment.name,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            subtitle: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 5.0),
+              child: Text(
+                comment.body,
+                style: const TextStyle(fontSize: 15),
+              ),
+            ),
           ),
         ),
-        const Divider()
       ],
     );
   }

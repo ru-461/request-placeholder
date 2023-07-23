@@ -8,16 +8,17 @@ class PhotoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      ListTile(
-        leading: CircleAvatar(
-          backgroundImage: NetworkImage(photo.thumbnailUrl),
-        ),
-        title: Text(
-          photo.title,
-          style: const TextStyle(fontSize: 18),
-        ),
-      ),
-      const Divider()
+      Card(
+          elevation: 5,
+          child: ListTile(
+            leading: CircleAvatar(
+              backgroundImage: NetworkImage(photo.thumbnailUrl),
+            ),
+            title: Text(
+              photo.title,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ))
     ]);
   }
 }
