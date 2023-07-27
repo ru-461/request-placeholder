@@ -20,6 +20,7 @@ dependencies:
   json_annotation:
   flutter_hooks:
   hooks_riverpod:
+  riverpod_annotation:
   http:
 
 dev_dependencies:
@@ -31,7 +32,7 @@ dev_dependencies:
   freezed:
   json_serializable:
   riverpod_generator:
-  riverpod_annotation:
+
 
 flutter:
   uses-material-design: true
