@@ -18,6 +18,8 @@ dependencies:
   go_router:
   freezed_annotation:
   json_annotation:
+  flutter_hooks:
+  hooks_riverpod:
   http:
 
 dev_dependencies:
@@ -27,8 +29,6 @@ dev_dependencies:
   flutter_lints:
   build_runner:
   freezed:
-  flutter_hooks:
-  hooks_riverpod:
   json_serializable:
   riverpod_generator:
   riverpod_annotation:
