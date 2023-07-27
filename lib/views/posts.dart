@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/components/post_item.dart';
 import 'package:request_placeholder/models/post.dart';
-import 'package:request_placeholder/repository/posts_repository.dart';
+import 'package:request_placeholder/repository/post_repository.dart';
 
 final logger = Logger();
 
