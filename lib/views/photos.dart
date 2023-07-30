@@ -1,40 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/components/photo_item.dart';
 import 'package:request_placeholder/models/photo.dart';
-import 'package:request_placeholder/repository/photo_repository.dart';
+import 'package:request_placeholder/providers/photos_future_provider.dart';
 
 final logger = Logger();
 
-class Photos extends StatefulWidget {
+class Photos extends ConsumerWidget {
   const Photos({super.key});
 
   @override
-  State<Photos> createState() => _PhotosState();
-}
-
-class _PhotosState extends State<Photos> {
-  late Future<List<Photo>> futurePhotos;
-  final _repository = PhotoRepository();
-
-  @override
-  void initState() {
-    super.initState();
-    // フェッチ
-    futurePhotos = _repository.fetchPhotos();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Center(
         child: RefreshIndicator(
-      onRefresh: () async {
-        // 再フェッチ
-        futurePhotos = _repository.fetchPhotos();
-        setState(() {});
-      },
+      onRefresh: () async => ref.refresh(photosFutureProviderProvider),
       child: FutureBuilder(
-          future: futurePhotos,
+          future: ref.watch(photosFutureProviderProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中

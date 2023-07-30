@@ -1,40 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/components/todo_item.dart';
 import 'package:request_placeholder/models/todo.dart';
-import 'package:request_placeholder/repository/todo_repository.dart';
+import 'package:request_placeholder/providers/todos_future_provider.dart';
 
 final logger = Logger();
 
-class Todos extends StatefulWidget {
+class Todos extends ConsumerWidget {
   const Todos({super.key});
 
   @override
-  State<Todos> createState() => _TodosState();
-}
-
-class _TodosState extends State<Todos> {
-  late Future<List<Todo>> futureTodos;
-  final _repository = TodoRepository();
-
-  @override
-  void initState() {
-    super.initState();
-    // フェッチ
-    futureTodos = _repository.fetchTodos();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         body: RefreshIndicator(
-      onRefresh: () async {
-        // 再フェッチ
-        futureTodos = _repository.fetchTodos();
-        setState(() {});
-      },
+      onRefresh: () async => ref.refresh(todosFutureProviderProvider),
       child: FutureBuilder(
-          future: futureTodos,
+          future: ref.watch(todosFutureProviderProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中

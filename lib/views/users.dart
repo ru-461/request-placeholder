@@ -1,40 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/components/user_item.dart';
 import 'package:request_placeholder/models/user.dart';
-import 'package:request_placeholder/repository/user_repository.dart';
+import 'package:request_placeholder/providers/users_future_provider.dart';
 
 final logger = Logger();
 
-class Users extends StatefulWidget {
+class Users extends ConsumerWidget {
   const Users({super.key});
 
   @override
-  State<Users> createState() => _UsersState();
-}
-
-class _UsersState extends State<Users> {
-  late Future<List<User>> futureUsers;
-  final _repository = UserRepository();
-
-  @override
-  void initState() {
-    super.initState();
-    // フェッチ
-    futureUsers = _repository.fetchUsers();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Center(
         child: RefreshIndicator(
-      onRefresh: () async {
-        // 再フェッチ
-        futureUsers = _repository.fetchUsers();
-        setState(() {});
-      },
+      onRefresh: () async => ref.refresh(usersFutureProviderProvider),
       child: FutureBuilder(
-          future: futureUsers,
+          future: ref.watch(usersFutureProviderProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中

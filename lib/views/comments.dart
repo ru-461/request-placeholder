@@ -1,40 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/components/comment_item.dart';
 import 'package:request_placeholder/models/comment.dart';
-import 'package:request_placeholder/repository/comment_repository.dart';
+import 'package:request_placeholder/providers/comments_future_provider.dart';
 
 final logger = Logger();
 
-class Comments extends StatefulWidget {
+class Comments extends ConsumerWidget {
   const Comments({super.key});
 
   @override
-  State<Comments> createState() => _CommentsState();
-}
-
-class _CommentsState extends State<Comments> {
-  late Future<List<Comment>> futureComments;
-  final _repository = CommentRepository();
-
-  @override
-  void initState() {
-    super.initState();
-    // フェッチ
-    futureComments = _repository.fetchComments();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         body: RefreshIndicator(
-      onRefresh: () async {
-        // 再フェッチ
-        futureComments = _repository.fetchComments();
-        setState(() {});
-      },
+      onRefresh: () async => ref.refresh(commentsFutureProviderProvider),
       child: FutureBuilder(
-          future: futureComments,
+          future: ref.watch(commentsFutureProviderProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中

@@ -1,40 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/components/album_item.dart';
 import 'package:request_placeholder/models/album.dart';
-import 'package:request_placeholder/repository/album_repository.dart';
+import 'package:request_placeholder/providers/albums_future_provider.dart';
 
 final logger = Logger();
 
-class Albums extends StatefulWidget {
+class Albums extends ConsumerWidget {
   const Albums({super.key});
 
   @override
-  State<Albums> createState() => _AlbumsState();
-}
-
-class _AlbumsState extends State<Albums> {
-  late Future<List<Album>> futureAlubums;
-  final _repository = AlbumRepository();
-
-  @override
-  void initState() {
-    super.initState();
-    // フェッチ
-    futureAlubums = _repository.fetchAlbums();
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Center(
         child: RefreshIndicator(
-      onRefresh: () async {
-        // 再フェッチ
-        futureAlubums = _repository.fetchAlbums();
-        setState(() {});
-      },
+      onRefresh: () async => ref.refresh(albumsFutureProviderProvider),
       child: FutureBuilder(
-          future: futureAlubums,
+          future: ref.watch(albumsFutureProviderProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中
