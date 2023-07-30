@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/components/post_item.dart';
+import 'package:request_placeholder/components/post_view.dart';
 import 'package:request_placeholder/models/post.dart';
 import 'package:request_placeholder/providers/posts_future_provider.dart';
 

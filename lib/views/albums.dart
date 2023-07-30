@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/components/album_item.dart';
+import 'package:request_placeholder/components/album_view.dart';
 import 'package:request_placeholder/models/album.dart';
 import 'package:request_placeholder/providers/albums_future_provider.dart';
 
