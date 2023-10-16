@@ -78,18 +78,20 @@ class _$PostCopyWithImpl<$Res, $Val extends Post>
 }
 
 /// @nodoc
-abstract class _$$_PostCopyWith<$Res> implements $PostCopyWith<$Res> {
-  factory _$$_PostCopyWith(_$_Post value, $Res Function(_$_Post) then) =
-      __$$_PostCopyWithImpl<$Res>;
+abstract class _$$PostImplCopyWith<$Res> implements $PostCopyWith<$Res> {
+  factory _$$PostImplCopyWith(
+          _$PostImpl value, $Res Function(_$PostImpl) then) =
+      __$$PostImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int userId, int id, String title, String body});
 }
 
 /// @nodoc
-class __$$_PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res, _$_Post>
-    implements _$$_PostCopyWith<$Res> {
-  __$$_PostCopyWithImpl(_$_Post _value, $Res Function(_$_Post) _then)
+class __$$PostImplCopyWithImpl<$Res>
+    extends _$PostCopyWithImpl<$Res, _$PostImpl>
+    implements _$$PostImplCopyWith<$Res> {
+  __$$PostImplCopyWithImpl(_$PostImpl _value, $Res Function(_$PostImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -100,7 +102,7 @@ class __$$_PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res, _$_Post>
     Object? title = null,
     Object? body = null,
   }) {
-    return _then(_$_Post(
+    return _then(_$PostImpl(
       userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -123,14 +125,15 @@ class __$$_PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res, _$_Post>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Post implements _Post {
-  _$_Post(
+class _$PostImpl implements _Post {
+  _$PostImpl(
       {required this.userId,
       required this.id,
       required this.title,
       required this.body});
 
-  factory _$_Post.fromJson(Map<String, dynamic> json) => _$$_PostFromJson(json);
+  factory _$PostImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PostImplFromJson(json);
 
   @override
   final int userId;
@@ -150,7 +153,7 @@ class _$_Post implements _Post {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Post &&
+            other is _$PostImpl &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
@@ -164,12 +167,12 @@ class _$_Post implements _Post {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PostCopyWith<_$_Post> get copyWith =>
-      __$$_PostCopyWithImpl<_$_Post>(this, _$identity);
+  _$$PostImplCopyWith<_$PostImpl> get copyWith =>
+      __$$PostImplCopyWithImpl<_$PostImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PostToJson(
+    return _$$PostImplToJson(
       this,
     );
   }
@@ -180,9 +183,9 @@ abstract class _Post implements Post {
       {required final int userId,
       required final int id,
       required final String title,
-      required final String body}) = _$_Post;
+      required final String body}) = _$PostImpl;
 
-  factory _Post.fromJson(Map<String, dynamic> json) = _$_Post.fromJson;
+  factory _Post.fromJson(Map<String, dynamic> json) = _$PostImpl.fromJson;
 
   @override
   int get userId;
@@ -194,5 +197,6 @@ abstract class _Post implements Post {
   String get body;
   @override
   @JsonKey(ignore: true)
-  _$$_PostCopyWith<_$_Post> get copyWith => throw _privateConstructorUsedError;
+  _$$PostImplCopyWith<_$PostImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

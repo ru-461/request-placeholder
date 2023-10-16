@@ -6,13 +6,14 @@ part of 'album.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Album _$$_AlbumFromJson(Map<String, dynamic> json) => _$_Album(
+_$AlbumImpl _$$AlbumImplFromJson(Map<String, dynamic> json) => _$AlbumImpl(
       userId: json['userId'] as int,
       id: json['id'] as int,
       title: json['title'] as String,
     );
 
-Map<String, dynamic> _$$_AlbumToJson(_$_Album instance) => <String, dynamic>{
+Map<String, dynamic> _$$AlbumImplToJson(_$AlbumImpl instance) =>
+    <String, dynamic>{
       'userId': instance.userId,
       'id': instance.id,
       'title': instance.title,
