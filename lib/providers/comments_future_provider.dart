@@ -6,6 +6,6 @@ part 'comments_future_provider.g.dart';
 
 @riverpod
 Future<List<Comment>> commentsFutureProvider(CommentsFutureProviderRef ref) {
-  final repository = CommentRepository();
-  return repository.fetchComments();
+  final commentRepository = CommentRepository();
+  return commentRepository.fetchComments();
 }

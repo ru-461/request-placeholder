@@ -6,6 +6,6 @@ part 'albums_future_provider.g.dart';
 
 @riverpod
 Future<List<Album>> albumsFutureProvider(AlbumsFutureProviderRef ref) {
-  final repository = AlbumRepository();
-  return repository.fetchAlbums();
+  final albumRepository = AlbumRepository();
+  return albumRepository.fetchAlbums();
 }

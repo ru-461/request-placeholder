@@ -6,6 +6,6 @@ part 'users_future_provider.g.dart';
 
 @riverpod
 Future<List<User>> usersFutureProvider(UsersFutureProviderRef ref) {
-  final repository = UserRepository();
-  return repository.fetchUsers();
+  final userRepository = UserRepository();
+  return userRepository.fetchUsers();
 }

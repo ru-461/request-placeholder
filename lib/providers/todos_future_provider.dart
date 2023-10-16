@@ -6,6 +6,6 @@ part 'todos_future_provider.g.dart';
 
 @riverpod
 Future<List<Todo>> todosFutureProvider(TodosFutureProviderRef ref) {
-  final repository = TodoRepository();
-  return repository.fetchTodos();
+  final todoRepository = TodoRepository();
+  return todoRepository.fetchTodos();
 }

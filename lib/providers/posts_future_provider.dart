@@ -6,6 +6,6 @@ part 'posts_future_provider.g.dart';
 
 @riverpod
 Future<List<Post>> postsFutureProvider(PostsFutureProviderRef ref) {
-  final repository = PostRepository();
-  return repository.fetchPosts();
+  final postRepository = PostRepository();
+  return postRepository.fetchPosts();
 }

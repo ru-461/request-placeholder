@@ -6,6 +6,6 @@ part 'photos_future_provider.g.dart';
 
 @riverpod
 Future<List<Photo>> photosFutureProvider(PhotosFutureProviderRef ref) {
-  final repository = PhotoRepository();
-  return repository.fetchPhotos();
+  final photoRepository = PhotoRepository();
+  return photoRepository.fetchPhotos();
 }
