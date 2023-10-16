@@ -7,7 +7,7 @@ part of 'comments_future_provider.dart';
 // **************************************************************************
 
 String _$commentsFutureProviderHash() =>
-    r'80dcbabd6cefe1532fca3f39a598a3a76d923744';
+    r'1ad5d567f423d4a665f40aa5109d66a251a02b02';
 
 /// See also [commentsFutureProvider].
 @ProviderFor(commentsFutureProvider)

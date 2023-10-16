@@ -7,7 +7,7 @@ part of 'todos_future_provider.dart';
 // **************************************************************************
 
 String _$todosFutureProviderHash() =>
-    r'7cde90298f200de7f89938ddbaadfbe5e5099577';
+    r'ba46ce09648cf3e72f7a92fbc528e5fb2f2f1faa';
 
 /// See also [todosFutureProvider].
 @ProviderFor(todosFutureProvider)

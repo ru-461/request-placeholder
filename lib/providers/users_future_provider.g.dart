@@ -7,7 +7,7 @@ part of 'users_future_provider.dart';
 // **************************************************************************
 
 String _$usersFutureProviderHash() =>
-    r'454dc3b769b34654d78c9bdf4e8f7ae602dd6fca';
+    r'b7f68a052c3a5da48771f3cbe7022003a6879d5b';
 
 /// See also [usersFutureProvider].
 @ProviderFor(usersFutureProvider)

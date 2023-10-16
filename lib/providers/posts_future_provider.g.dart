@@ -7,7 +7,7 @@ part of 'posts_future_provider.dart';
 // **************************************************************************
 
 String _$postsFutureProviderHash() =>
-    r'8f96e64051a25d080a771173485765e1c4db9d0d';
+    r'bdc672147329fa3a09d23d8d7142bc549d050f50';
 
 /// See also [postsFutureProvider].
 @ProviderFor(postsFutureProvider)

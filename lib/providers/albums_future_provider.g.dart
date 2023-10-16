@@ -7,7 +7,7 @@ part of 'albums_future_provider.dart';
 // **************************************************************************
 
 String _$albumsFutureProviderHash() =>
-    r'f80ed344375af39f274bcd86c847b732aadcaeed';
+    r'8529d885a1f57fdeeb9f5e06b8037adb403f80d2';
 
 /// See also [albumsFutureProvider].
 @ProviderFor(albumsFutureProvider)
