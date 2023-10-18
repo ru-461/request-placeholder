@@ -9,7 +9,6 @@ analyzer:
     - custom_lint
 
   exclude:
-    - "**/*.g.dart"
     - "**/*.freezed.dart"
 
   errors:
