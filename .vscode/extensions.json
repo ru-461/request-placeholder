@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "dart-code.dart-code",
+    "dart-code.flutter",
+    "alexisvt.flutter-snippets",
+    "nash.awesome-flutter-snippets",
+    "marcelovelasquez.flutter-tree",
+    "circlecodesolution.ccs-flutter-color",
+    "robert-brunhage.flutter-riverpod-snippets",
+    "davidwoo.flutter-auto-import",
+    "blaxou.freezed",
+    "gaetschwartz.build-runner",
+    "djbkwon.flutter-dependency-docs"
+  ]
+}
