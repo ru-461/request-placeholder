@@ -21,7 +21,7 @@ class TodoRepository {
     if (response.statusCode == 200) {
       return compute(parseTodos, response.body);
     } else {
-      throw Exception('Failed to fetch Todos');
+      throw Exception('Failed to fetch Todos.');
     }
   }
 

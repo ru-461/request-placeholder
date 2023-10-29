@@ -19,7 +19,7 @@ class UserRepository {
     if (response.statusCode == 200) {
       return compute(parseUsers, response.body);
     } else {
-      throw Exception('Failed to fetch Users');
+      throw Exception('Failed to fetch Users.');
     }
   }
 

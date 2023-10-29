@@ -20,7 +20,7 @@ class AlbumRepository {
     if (response.statusCode == 200) {
       return compute(parseAlbums, response.body);
     } else {
-      throw Exception('Failed to fetch Albums');
+      throw Exception('Failed to fetch Albums.');
     }
   }
 

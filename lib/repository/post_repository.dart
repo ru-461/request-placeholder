@@ -20,7 +20,7 @@ class PostRepository {
     if (response.statusCode == 200) {
       return compute(parsePosts, response.body);
     } else {
-      throw Exception('Failed to fetch Posts');
+      throw Exception('Failed to fetch Posts.');
     }
   }
 

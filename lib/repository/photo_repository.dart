@@ -20,7 +20,7 @@ class PhotoRepository {
     if (response.statusCode == 200) {
       return compute(parsePhotos, response.body);
     } else {
-      throw Exception('Failed to fetch Photos');
+      throw Exception('Failed to fetch Photos.');
     }
   }
 
