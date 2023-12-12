@@ -3,8 +3,8 @@
   "dart.renameFilesWithClasses": "always",
   "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
   },
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
