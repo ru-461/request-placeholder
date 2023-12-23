@@ -27,42 +27,49 @@ final GoRouter router = GoRouter(
         routes: <RouteBase>[
           GoRoute(
             path: '/home',
+            name: 'home',
             pageBuilder: (BuildContext context, GoRouterState state) {
               return _noneTransitionPage(child: const Home());
             },
           ),
           GoRoute(
             path: '/posts',
+            name: 'posts',
             pageBuilder: (BuildContext context, GoRouterState state) {
               return _noneTransitionPage(child: const Posts());
             },
           ),
           GoRoute(
             path: '/comments',
+            name: 'comments',
             pageBuilder: (BuildContext context, GoRouterState state) {
               return _noneTransitionPage(child: const Comments());
             },
           ),
           GoRoute(
             path: '/albums',
+            name: 'albums',
             pageBuilder: (BuildContext context, GoRouterState state) {
               return _noneTransitionPage(child: const Albums());
             },
           ),
           GoRoute(
             path: '/photos',
+            name: 'photos',
             pageBuilder: (BuildContext context, GoRouterState state) {
               return _noneTransitionPage(child: const Photos());
             },
           ),
           GoRoute(
             path: '/todos',
+            name: 'todos',
             pageBuilder: (BuildContext context, GoRouterState state) {
               return _noneTransitionPage(child: const Todos());
             },
           ),
           GoRoute(
             path: '/users',
+            name: 'users',
             pageBuilder: (BuildContext context, GoRouterState state) {
               return _noneTransitionPage(child: const Users());
             },
