@@ -81,7 +81,6 @@ class _BaseState extends State<Base> {
               _pageTitle = 'Home';
               context.go('/');
           }
-          setState(() {});
         },
       ),
       body: widget.child,
