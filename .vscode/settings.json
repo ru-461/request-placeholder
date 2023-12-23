@@ -1,6 +1,8 @@
 {
   "dart.openDevTools": "flutter",
   "dart.renameFilesWithClasses": "always",
+  "debug.internalConsoleOptions": "openOnSessionStart",
+  "debug.openDebug": "openOnDebugBreak",
   "editor.bracketPairColorization.enabled": true,
   "editor.codeActionsOnSave": {
     "source.fixAll": "explicit",
@@ -8,5 +10,13 @@
   },
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
-  "editor.guides.bracketPairs": true
+  "editor.formatOnType": true,
+  "editor.guides.bracketPairs": true,
+  "editor.rulers": [
+    80
+  ],
+  "editor.selectionHighlight": false,
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "onlySnippets",
+  "editor.wordBasedSuggestions": "off"
 }
