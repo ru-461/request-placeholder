@@ -29,7 +29,7 @@ final goRouterProvider = Provider<GoRouter>((ref) => GoRouter(
                     Base(child: child),
             routes: <RouteBase>[
               GoRoute(
-                path: '/home',
+                path: '/',
                 name: 'home',
                 pageBuilder: (BuildContext context, GoRouterState state) {
                   return _noneTransitionPage(child: const Home());
