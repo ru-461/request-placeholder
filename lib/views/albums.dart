@@ -14,9 +14,9 @@ class Albums extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Center(
         child: RefreshIndicator(
-      onRefresh: () async => ref.refresh(albumsFutureProviderProvider),
+      onRefresh: () async => ref.refresh(albumsFutureProvider),
       child: FutureBuilder(
-          future: ref.watch(albumsFutureProviderProvider.future),
+          future: ref.watch(albumsFutureProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中

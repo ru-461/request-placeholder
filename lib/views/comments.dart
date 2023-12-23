@@ -14,9 +14,9 @@ class Comments extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         body: RefreshIndicator(
-      onRefresh: () async => ref.refresh(commentsFutureProviderProvider),
+      onRefresh: () async => ref.refresh(commentsFutureProvider),
       child: FutureBuilder(
-          future: ref.watch(commentsFutureProviderProvider.future),
+          future: ref.watch(commentsFutureProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中

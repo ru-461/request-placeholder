@@ -5,7 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'users_future_provider.g.dart';
 
 @riverpod
-Future<List<User>> usersFutureProvider(UsersFutureProviderRef ref) {
+Future<List<User>> usersFuture(UsersFutureRef ref) {
   final userRepository = UserRepository();
   return userRepository.fetchUsers();
 }

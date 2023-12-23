@@ -14,9 +14,9 @@ class Users extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Center(
         child: RefreshIndicator(
-      onRefresh: () async => ref.refresh(usersFutureProviderProvider),
+      onRefresh: () async => ref.refresh(usersFutureProvider),
       child: FutureBuilder(
-          future: ref.watch(usersFutureProviderProvider.future),
+          future: ref.watch(usersFutureProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中

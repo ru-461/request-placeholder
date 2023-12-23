@@ -14,9 +14,9 @@ class Posts extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         body: RefreshIndicator(
-      onRefresh: () async => ref.refresh(postsFutureProviderProvider),
+      onRefresh: () async => ref.refresh(postsFutureProvider),
       child: FutureBuilder(
-          future: ref.watch(postsFutureProviderProvider.future),
+          future: ref.watch(postsFutureProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中

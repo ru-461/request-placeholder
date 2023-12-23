@@ -5,7 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'todos_future_provider.g.dart';
 
 @riverpod
-Future<List<Todo>> todosFutureProvider(TodosFutureProviderRef ref) {
+Future<List<Todo>> todosFuture(TodosFutureRef ref) {
   final todoRepository = TodoRepository();
   return todoRepository.fetchTodos();
 }

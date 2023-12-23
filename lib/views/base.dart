@@ -6,7 +6,7 @@ import 'package:logger/logger.dart';
 final logger = Logger();
 
 class Base extends StatefulWidget {
-  const Base({Key? key, required this.child}) : super(key: key);
+  const Base({super.key, required this.child});
 
   // ウィジェット
   final Widget child;

@@ -14,9 +14,9 @@ class Todos extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         body: RefreshIndicator(
-      onRefresh: () async => ref.refresh(todosFutureProviderProvider),
+      onRefresh: () async => ref.refresh(todosFutureProvider),
       child: FutureBuilder(
-          future: ref.watch(todosFutureProviderProvider.future),
+          future: ref.watch(todosFutureProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中

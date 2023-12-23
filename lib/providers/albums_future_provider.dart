@@ -5,7 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'albums_future_provider.g.dart';
 
 @riverpod
-Future<List<Album>> albumsFutureProvider(AlbumsFutureProviderRef ref) {
+Future<List<Album>> albumsFuture(AlbumsFutureRef ref) {
   final albumRepository = AlbumRepository();
   return albumRepository.fetchAlbums();
 }

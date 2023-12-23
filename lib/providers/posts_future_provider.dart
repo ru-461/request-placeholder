@@ -5,7 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'posts_future_provider.g.dart';
 
 @riverpod
-Future<List<Post>> postsFutureProvider(PostsFutureProviderRef ref) {
+Future<List<Post>> postsFuture(PostsFutureRef ref) {
   final postRepository = PostRepository();
   return postRepository.fetchPosts();
 }

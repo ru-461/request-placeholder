@@ -5,7 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'comments_future_provider.g.dart';
 
 @riverpod
-Future<List<Comment>> commentsFutureProvider(CommentsFutureProviderRef ref) {
+Future<List<Comment>> commentsFuture(CommentsFutureRef ref) {
   final commentRepository = CommentRepository();
   return commentRepository.fetchComments();
 }

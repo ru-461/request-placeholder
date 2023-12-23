@@ -5,7 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'photos_future_provider.g.dart';
 
 @riverpod
-Future<List<Photo>> photosFutureProvider(PhotosFutureProviderRef ref) {
+Future<List<Photo>> photosFuture(PhotosFutureRef ref) {
   final photoRepository = PhotoRepository();
   return photoRepository.fetchPhotos();
 }

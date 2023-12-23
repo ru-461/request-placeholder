@@ -14,9 +14,9 @@ class Photos extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Center(
         child: RefreshIndicator(
-      onRefresh: () async => ref.refresh(photosFutureProviderProvider),
+      onRefresh: () async => ref.refresh(photosFutureProvider),
       child: FutureBuilder(
-          future: ref.watch(photosFutureProviderProvider.future),
+          future: ref.watch(photosFutureProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中
