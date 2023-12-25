@@ -38,53 +38,54 @@ GoRouter router(RouterRef ref) {
       ]);
 }
 
-@TypedGoRoute<HomeRoutes>(path: Routes.home)
+@TypedGoRoute<HomeRoutes>(path: Routes.home, routes: [
+  TypedGoRoute<PostsRoute>(path: Routes.posts),
+  TypedGoRoute<CommentsRoute>(path: Routes.comments),
+  TypedGoRoute<AlbumsRoute>(path: Routes.albums),
+  TypedGoRoute<PhotosRoute>(path: Routes.photos),
+  TypedGoRoute<TodosRoute>(path: Routes.todos),
+  TypedGoRoute<UsersRoute>(path: Routes.users),
+])
 class HomeRoutes extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Home());
 }
 
-@TypedGoRoute<PostsRoute>(path: Routes.posts)
 class PostsRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Posts());
 }
 
-@TypedGoRoute<CommentsRoute>(path: Routes.comments)
 class CommentsRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Comments());
 }
 
-@TypedGoRoute<AlbumsRoute>(path: Routes.albums)
 class AlbumsRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Albums());
 }
 
-@TypedGoRoute<PhotosRoute>(path: Routes.photos)
 class PhotosRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Photos());
 }
 
-@TypedGoRoute<UsersRoute>(path: Routes.users)
-class UsersRoute extends GoRouteData {
-  @override
-  Page buildPage(BuildContext context, GoRouterState state) =>
-      noneTransitionPage(child: const Users());
-}
-
-@TypedGoRoute<TodosRoute>(path: Routes.todos)
 class TodosRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Todos());
+}
+
+class UsersRoute extends GoRouteData {
+  @override
+  Page buildPage(BuildContext context, GoRouterState state) =>
+      noneTransitionPage(child: const Users());
 }
 
 // アニメーションなしトランジション
