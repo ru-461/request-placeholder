@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:request_placeholder/views/Photos.dart';
 import 'package:request_placeholder/views/albums.dart';
 import 'package:request_placeholder/views/base.dart';
 import 'package:request_placeholder/views/comments.dart';
 import 'package:request_placeholder/views/home.dart';
+import 'package:request_placeholder/views/photos.dart';
 import 'package:request_placeholder/views/posts.dart';
 import 'package:request_placeholder/views/todos.dart';
 import 'package:request_placeholder/views/users.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'router.g.dart';
 
 // キー
 final GlobalKey<NavigatorState> _rootNavigatorKey =
@@ -16,8 +18,9 @@ final GlobalKey<NavigatorState> _rootNavigatorKey =
 final GlobalKey<NavigatorState> _shellNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'shell');
 
-// ルート
-final goRouterProvider = Provider<GoRouter>((ref) => GoRouter(
+@riverpod
+GoRouter router(RouterRef ref) {
+  return GoRouter(
       navigatorKey: _rootNavigatorKey,
       initialLocation: '/posts',
       debugLogDiagnostics: true,
@@ -32,57 +35,57 @@ final goRouterProvider = Provider<GoRouter>((ref) => GoRouter(
                 path: '/',
                 name: 'home',
                 pageBuilder: (BuildContext context, GoRouterState state) {
-                  return _noneTransitionPage(child: const Home());
+                  return noneTransitionPage(child: const Home());
                 },
               ),
               GoRoute(
                 path: '/posts',
                 name: 'posts',
                 pageBuilder: (BuildContext context, GoRouterState state) {
-                  return _noneTransitionPage(child: const Posts());
+                  return noneTransitionPage(child: const Posts());
                 },
               ),
               GoRoute(
                 path: '/comments',
                 name: 'comments',
                 pageBuilder: (BuildContext context, GoRouterState state) {
-                  return _noneTransitionPage(child: const Comments());
+                  return noneTransitionPage(child: const Comments());
                 },
               ),
               GoRoute(
                 path: '/albums',
                 name: 'albums',
                 pageBuilder: (BuildContext context, GoRouterState state) {
-                  return _noneTransitionPage(child: const Albums());
+                  return noneTransitionPage(child: const Albums());
                 },
               ),
               GoRoute(
                 path: '/photos',
                 name: 'photos',
                 pageBuilder: (BuildContext context, GoRouterState state) {
-                  return _noneTransitionPage(child: const Photos());
+                  return noneTransitionPage(child: const Photos());
                 },
               ),
               GoRoute(
                 path: '/todos',
                 name: 'todos',
                 pageBuilder: (BuildContext context, GoRouterState state) {
-                  return _noneTransitionPage(child: const Todos());
+                  return noneTransitionPage(child: const Todos());
                 },
               ),
               GoRoute(
                 path: '/users',
                 name: 'users',
                 pageBuilder: (BuildContext context, GoRouterState state) {
-                  return _noneTransitionPage(child: const Users());
+                  return noneTransitionPage(child: const Users());
                 },
               ),
             ])
-      ],
-    ));
+      ]);
+}
 
 // アニメーションなしトランジション
-CustomTransitionPage _noneTransitionPage({
+CustomTransitionPage noneTransitionPage({
   required Widget child,
 }) {
   return CustomTransitionPage(

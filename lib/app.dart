@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
-import 'package:request_placeholder/providers/go_router_provider.dart';
+import 'package:request_placeholder/router/router.dart';
 
 // ロガー
 final logger = Logger();
@@ -11,7 +11,7 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final router = ref.watch(goRouterProvider);
+    final router = ref.watch(routerProvider);
 
     return MaterialApp.router(
         title: 'Request {JSON} Placeholder',
