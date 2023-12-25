@@ -24,7 +24,7 @@ final GlobalKey<NavigatorState> _shellNavigatorKey =
 GoRouter router(RouterRef ref) {
   return GoRouter(
       navigatorKey: _rootNavigatorKey,
-      initialLocation: '/posts',
+      initialLocation: '/',
       debugLogDiagnostics: true,
       errorBuilder: (BuildContext context, GoRouterState state) =>
           const Error(),
@@ -34,58 +34,50 @@ GoRouter router(RouterRef ref) {
             builder:
                 (BuildContext context, GoRouterState state, Widget child) =>
                     Base(child: child),
-            routes: <RouteBase>[
-              GoRoute(
-                path: Routes.home,
-                name: 'home',
-                pageBuilder: (BuildContext context, GoRouterState state) {
-                  return noneTransitionPage(child: const Home());
-                },
-              ),
-              GoRoute(
-                path: Routes.posts,
-                name: 'posts',
-                pageBuilder: (BuildContext context, GoRouterState state) {
-                  return noneTransitionPage(child: const Posts());
-                },
-              ),
-              GoRoute(
-                path: Routes.comments,
-                name: 'comments',
-                pageBuilder: (BuildContext context, GoRouterState state) {
-                  return noneTransitionPage(child: const Comments());
-                },
-              ),
-              GoRoute(
-                path: Routes.albums,
-                name: 'albums',
-                pageBuilder: (BuildContext context, GoRouterState state) {
-                  return noneTransitionPage(child: const Albums());
-                },
-              ),
-              GoRoute(
-                path: Routes.photos,
-                name: 'photos',
-                pageBuilder: (BuildContext context, GoRouterState state) {
-                  return noneTransitionPage(child: const Photos());
-                },
-              ),
-              GoRoute(
-                path: Routes.todos,
-                name: 'todos',
-                pageBuilder: (BuildContext context, GoRouterState state) {
-                  return noneTransitionPage(child: const Todos());
-                },
-              ),
-              GoRoute(
-                path: Routes.users,
-                name: 'users',
-                pageBuilder: (BuildContext context, GoRouterState state) {
-                  return noneTransitionPage(child: const Users());
-                },
-              ),
-            ])
+            routes: $appRoutes)
       ]);
+}
+
+@TypedGoRoute<HomeRoutes>(path: Routes.home)
+class HomeRoutes extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const Home();
+}
+
+@TypedGoRoute<PostsRoute>(path: Routes.posts)
+class PostsRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const Posts();
+}
+
+@TypedGoRoute<CommentsRoute>(path: Routes.comments)
+class CommentsRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const Comments();
+}
+
+@TypedGoRoute<AlbumsRoute>(path: Routes.albums)
+class AlbumsRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const Albums();
+}
+
+@TypedGoRoute<PhotosRoute>(path: Routes.photos)
+class PhotosRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const Photos();
+}
+
+@TypedGoRoute<UsersRoute>(path: Routes.users)
+class UsersRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const Users();
+}
+
+@TypedGoRoute<TodosRoute>(path: Routes.todos)
+class TodosRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const Todos();
 }
 
 // アニメーションなしトランジション
