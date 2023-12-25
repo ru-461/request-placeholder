@@ -11,13 +11,18 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // ルーター
     final router = ref.watch(routerProvider);
 
     return MaterialApp.router(
-        title: 'Request {JSON} Placeholder',
-        debugShowCheckedModeBanner: true,
-        theme: ThemeData(useMaterial3: true, brightness: Brightness.light),
-        darkTheme: ThemeData(useMaterial3: true, brightness: Brightness.dark),
-        routerConfig: router);
+      title: 'Request {JSON} Placeholder',
+      debugShowCheckedModeBanner: true,
+      theme: ThemeData(useMaterial3: true, brightness: Brightness.light),
+      darkTheme: ThemeData(useMaterial3: true, brightness: Brightness.dark),
+      restorationScopeId: 'router',
+      routerDelegate: router.routerDelegate,
+      routeInformationProvider: router.routeInformationProvider,
+      routeInformationParser: router.routeInformationParser,
+    );
   }
 }
