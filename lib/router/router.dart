@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:request_placeholder/constants/route.dart';
 import 'package:request_placeholder/views/albums.dart';
 import 'package:request_placeholder/views/base.dart';
 import 'package:request_placeholder/views/comments.dart';
@@ -32,49 +33,49 @@ GoRouter router(RouterRef ref) {
                     Base(child: child),
             routes: <RouteBase>[
               GoRoute(
-                path: '/',
+                path: Routes.home,
                 name: 'home',
                 pageBuilder: (BuildContext context, GoRouterState state) {
                   return noneTransitionPage(child: const Home());
                 },
               ),
               GoRoute(
-                path: '/posts',
+                path: Routes.posts,
                 name: 'posts',
                 pageBuilder: (BuildContext context, GoRouterState state) {
                   return noneTransitionPage(child: const Posts());
                 },
               ),
               GoRoute(
-                path: '/comments',
+                path: Routes.comments,
                 name: 'comments',
                 pageBuilder: (BuildContext context, GoRouterState state) {
                   return noneTransitionPage(child: const Comments());
                 },
               ),
               GoRoute(
-                path: '/albums',
+                path: Routes.albums,
                 name: 'albums',
                 pageBuilder: (BuildContext context, GoRouterState state) {
                   return noneTransitionPage(child: const Albums());
                 },
               ),
               GoRoute(
-                path: '/photos',
+                path: Routes.photos,
                 name: 'photos',
                 pageBuilder: (BuildContext context, GoRouterState state) {
                   return noneTransitionPage(child: const Photos());
                 },
               ),
               GoRoute(
-                path: '/todos',
+                path: Routes.todos,
                 name: 'todos',
                 pageBuilder: (BuildContext context, GoRouterState state) {
                   return noneTransitionPage(child: const Todos());
                 },
               ),
               GoRoute(
-                path: '/users',
+                path: Routes.users,
                 name: 'users',
                 pageBuilder: (BuildContext context, GoRouterState state) {
                   return noneTransitionPage(child: const Users());
