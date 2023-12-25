@@ -4,6 +4,7 @@ import 'package:request_placeholder/constants/route.dart';
 import 'package:request_placeholder/views/albums.dart';
 import 'package:request_placeholder/views/base.dart';
 import 'package:request_placeholder/views/comments.dart';
+import 'package:request_placeholder/views/error.dart';
 import 'package:request_placeholder/views/home.dart';
 import 'package:request_placeholder/views/photos.dart';
 import 'package:request_placeholder/views/posts.dart';
@@ -25,6 +26,8 @@ GoRouter router(RouterRef ref) {
       navigatorKey: _rootNavigatorKey,
       initialLocation: '/posts',
       debugLogDiagnostics: true,
+      errorBuilder: (BuildContext context, GoRouterState state) =>
+          const Error(),
       routes: <RouteBase>[
         ShellRoute(
             navigatorKey: _shellNavigatorKey,
