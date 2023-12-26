@@ -1,4 +1,5 @@
 {
+  "dart.flutterSdkPath": ".fvm/flutter_sdk",
   "dart.openDevTools": "flutter",
   "dart.renameFilesWithClasses": "always",
   "debug.internalConsoleOptions": "openOnSessionStart",
@@ -18,5 +19,11 @@
   "editor.selectionHighlight": false,
   "editor.suggestSelection": "first",
   "editor.tabCompletion": "onlySnippets",
-  "editor.wordBasedSuggestions": "off"
+  "editor.wordBasedSuggestions": "off",
+  "files.watcherExclude": {
+    "**/.fvm": true
+  },
+  "search.exclude": {
+    "**/.fvm": true
+  }
 }
