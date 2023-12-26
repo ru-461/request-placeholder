@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'posts_future_provider.dart';
+part of 'photos_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$postsFutureHash() => r'1922179637bbe603056858c246ea8b398e811e0d';
+String _$photosHash() => r'eff906c8f1412b50d87661a2f9200ba054437741';
 
-/// See also [postsFuture].
-@ProviderFor(postsFuture)
-final postsFutureProvider = AutoDisposeFutureProvider<List<Post>>.internal(
-  postsFuture,
-  name: r'postsFutureProvider',
+/// See also [photos].
+@ProviderFor(photos)
+final photosProvider = AutoDisposeFutureProvider<List<Photo>>.internal(
+  photos,
+  name: r'photosProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$postsFutureHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$photosHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef PostsFutureRef = AutoDisposeFutureProviderRef<List<Post>>;
+typedef PhotosRef = AutoDisposeFutureProviderRef<List<Photo>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

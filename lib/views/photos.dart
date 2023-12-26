@@ -3,7 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/components/photo_view.dart';
 import 'package:request_placeholder/models/photo.dart';
-import 'package:request_placeholder/providers/photos_future_provider.dart';
+import 'package:request_placeholder/providers/photos_provider.dart';
 
 final logger = Logger();
 
@@ -14,9 +14,9 @@ class Photos extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Center(
         child: RefreshIndicator(
-      onRefresh: () async => ref.refresh(photosFutureProvider),
+      onRefresh: () async => ref.refresh(photosProvider),
       child: FutureBuilder(
-          future: ref.watch(photosFutureProvider.future),
+          future: ref.watch(photosProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中

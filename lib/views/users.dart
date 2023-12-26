@@ -3,7 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/components/user_view.dart';
 import 'package:request_placeholder/models/user.dart';
-import 'package:request_placeholder/providers/users_future_provider.dart';
+import 'package:request_placeholder/providers/users_provider.dart';
 
 final logger = Logger();
 
@@ -14,9 +14,9 @@ class Users extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Center(
         child: RefreshIndicator(
-      onRefresh: () async => ref.refresh(usersFutureProvider),
+      onRefresh: () async => ref.refresh(usersProvider),
       child: FutureBuilder(
-          future: ref.watch(usersFutureProvider.future),
+          future: ref.watch(usersProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中

@@ -3,7 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/components/comment_view.dart';
 import 'package:request_placeholder/models/comment.dart';
-import 'package:request_placeholder/providers/comments_future_provider.dart';
+import 'package:request_placeholder/providers/comments_provider.dart';
 
 final logger = Logger();
 
@@ -14,9 +14,9 @@ class Comments extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         body: RefreshIndicator(
-      onRefresh: () async => ref.refresh(commentsFutureProvider),
+      onRefresh: () async => ref.refresh(commentsProvider),
       child: FutureBuilder(
-          future: ref.watch(commentsFutureProvider.future),
+          future: ref.watch(commentsProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中

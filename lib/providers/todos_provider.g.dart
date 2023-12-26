@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'todos_future_provider.dart';
+part of 'todos_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$todosFutureHash() => r'06640248ed4f8cd7a5d6cbdc508f28cca8f466f8';
+String _$todosHash() => r'c5ebc2abd9d6b9ea37835798650663857ce440a1';
 
-/// See also [todosFuture].
-@ProviderFor(todosFuture)
-final todosFutureProvider = AutoDisposeFutureProvider<List<Todo>>.internal(
-  todosFuture,
-  name: r'todosFutureProvider',
+/// See also [todos].
+@ProviderFor(todos)
+final todosProvider = AutoDisposeFutureProvider<List<Todo>>.internal(
+  todos,
+  name: r'todosProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$todosFutureHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$todosHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef TodosFutureRef = AutoDisposeFutureProviderRef<List<Todo>>;
+typedef TodosRef = AutoDisposeFutureProviderRef<List<Todo>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

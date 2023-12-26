@@ -3,7 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/components/album_view.dart';
 import 'package:request_placeholder/models/album.dart';
-import 'package:request_placeholder/providers/albums_future_provider.dart';
+import 'package:request_placeholder/providers/albums_provider.dart';
 
 final logger = Logger();
 
@@ -14,9 +14,9 @@ class Albums extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Center(
         child: RefreshIndicator(
-      onRefresh: () async => ref.refresh(albumsFutureProvider),
+      onRefresh: () async => ref.refresh(albumsProvider),
       child: FutureBuilder(
-          future: ref.watch(albumsFutureProvider.future),
+          future: ref.watch(albumsProvider.future),
           builder: (BuildContext context, AsyncSnapshot snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               // 待機中

@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'albums_future_provider.dart';
+part of 'albums_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$albumsFutureHash() => r'20ccaf49b1a25f387a0527d8e825e284d8d97453';
+String _$albumsHash() => r'17e704bad3931476e79c4a8258a61abb355a06bb';
 
-/// See also [albumsFuture].
-@ProviderFor(albumsFuture)
-final albumsFutureProvider = AutoDisposeFutureProvider<List<Album>>.internal(
-  albumsFuture,
-  name: r'albumsFutureProvider',
+/// See also [albums].
+@ProviderFor(albums)
+final albumsProvider = AutoDisposeFutureProvider<List<Album>>.internal(
+  albums,
+  name: r'albumsProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$albumsFutureHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$albumsHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef AlbumsFutureRef = AutoDisposeFutureProviderRef<List<Album>>;
+typedef AlbumsRef = AutoDisposeFutureProviderRef<List<Album>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

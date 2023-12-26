@@ -1,24 +1,24 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'users_future_provider.dart';
+part of 'comments_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$usersFutureHash() => r'9216c349eea9d33007ae24255e3515a2d3abfa65';
+String _$commentsHash() => r'2b5f002dc58ba3f9a9372a09653ef9e1464b11b1';
 
-/// See also [usersFuture].
-@ProviderFor(usersFuture)
-final usersFutureProvider = AutoDisposeFutureProvider<List<User>>.internal(
-  usersFuture,
-  name: r'usersFutureProvider',
+/// See also [comments].
+@ProviderFor(comments)
+final commentsProvider = AutoDisposeFutureProvider<List<Comment>>.internal(
+  comments,
+  name: r'commentsProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$usersFutureHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$commentsHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef UsersFutureRef = AutoDisposeFutureProviderRef<List<User>>;
+typedef CommentsRef = AutoDisposeFutureProviderRef<List<Comment>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
