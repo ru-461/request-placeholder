@@ -29,8 +29,10 @@ class _BaseState extends State<Base> {
         ),
         centerTitle: true,
         backgroundColor: const Color.fromRGBO(16, 185, 129, 1),
-        leading: IconButton(
-            onPressed: () => {context.go('/')}, icon: const Icon(Icons.home)),
+        actions: [
+          IconButton(
+              onPressed: () => {context.go('/')}, icon: const Icon(Icons.home))
+        ],
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex,
