@@ -15,27 +15,27 @@ RouteBase get $homeRoutes => GoRouteData.$route(
       factory: $HomeRoutesExtension._fromState,
       routes: [
         GoRouteData.$route(
-          path: 'posts',
+          path: '/posts',
           factory: $PostsRouteExtension._fromState,
         ),
         GoRouteData.$route(
-          path: 'comments',
+          path: '/comments',
           factory: $CommentsRouteExtension._fromState,
         ),
         GoRouteData.$route(
-          path: 'albums',
+          path: '/albums',
           factory: $AlbumsRouteExtension._fromState,
         ),
         GoRouteData.$route(
-          path: 'photos',
+          path: '/photos',
           factory: $PhotosRouteExtension._fromState,
         ),
         GoRouteData.$route(
-          path: 'todos',
+          path: '/todos',
           factory: $TodosRouteExtension._fromState,
         ),
         GoRouteData.$route(
-          path: 'users',
+          path: '/users',
           factory: $UsersRouteExtension._fromState,
         ),
       ],

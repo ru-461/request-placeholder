@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:request_placeholder/constants/route.dart';
+import 'package:request_placeholder/constants/routes.dart';
 import 'package:request_placeholder/views/albums.dart';
 import 'package:request_placeholder/views/base.dart';
 import 'package:request_placeholder/views/comments.dart';
