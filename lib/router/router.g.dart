@@ -8,37 +8,17 @@ part of 'router.dart';
 
 List<RouteBase> get $appRoutes => [
       $homeRoutes,
+      $postsRoute,
+      $commentsRoute,
+      $albumsRoute,
+      $photosRoute,
+      $todosRoute,
+      $usersRoute,
     ];
 
 RouteBase get $homeRoutes => GoRouteData.$route(
       path: '/',
       factory: $HomeRoutesExtension._fromState,
-      routes: [
-        GoRouteData.$route(
-          path: '/posts',
-          factory: $PostsRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: '/comments',
-          factory: $CommentsRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: '/albums',
-          factory: $AlbumsRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: '/photos',
-          factory: $PhotosRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: '/todos',
-          factory: $TodosRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: '/users',
-          factory: $UsersRouteExtension._fromState,
-        ),
-      ],
     );
 
 extension $HomeRoutesExtension on HomeRoutes {
@@ -58,6 +38,11 @@ extension $HomeRoutesExtension on HomeRoutes {
   void replace(BuildContext context) => context.replace(location);
 }
 
+RouteBase get $postsRoute => GoRouteData.$route(
+      path: '/posts',
+      factory: $PostsRouteExtension._fromState,
+    );
+
 extension $PostsRouteExtension on PostsRoute {
   static PostsRoute _fromState(GoRouterState state) => PostsRoute();
 
@@ -74,6 +59,11 @@ extension $PostsRouteExtension on PostsRoute {
 
   void replace(BuildContext context) => context.replace(location);
 }
+
+RouteBase get $commentsRoute => GoRouteData.$route(
+      path: '/comments',
+      factory: $CommentsRouteExtension._fromState,
+    );
 
 extension $CommentsRouteExtension on CommentsRoute {
   static CommentsRoute _fromState(GoRouterState state) => CommentsRoute();
@@ -92,6 +82,11 @@ extension $CommentsRouteExtension on CommentsRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
+RouteBase get $albumsRoute => GoRouteData.$route(
+      path: '/albums',
+      factory: $AlbumsRouteExtension._fromState,
+    );
+
 extension $AlbumsRouteExtension on AlbumsRoute {
   static AlbumsRoute _fromState(GoRouterState state) => AlbumsRoute();
 
@@ -108,6 +103,11 @@ extension $AlbumsRouteExtension on AlbumsRoute {
 
   void replace(BuildContext context) => context.replace(location);
 }
+
+RouteBase get $photosRoute => GoRouteData.$route(
+      path: '/photos',
+      factory: $PhotosRouteExtension._fromState,
+    );
 
 extension $PhotosRouteExtension on PhotosRoute {
   static PhotosRoute _fromState(GoRouterState state) => PhotosRoute();
@@ -126,6 +126,11 @@ extension $PhotosRouteExtension on PhotosRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
+RouteBase get $todosRoute => GoRouteData.$route(
+      path: '/todos',
+      factory: $TodosRouteExtension._fromState,
+    );
+
 extension $TodosRouteExtension on TodosRoute {
   static TodosRoute _fromState(GoRouterState state) => TodosRoute();
 
@@ -142,6 +147,11 @@ extension $TodosRouteExtension on TodosRoute {
 
   void replace(BuildContext context) => context.replace(location);
 }
+
+RouteBase get $usersRoute => GoRouteData.$route(
+      path: '/users',
+      factory: $UsersRouteExtension._fromState,
+    );
 
 extension $UsersRouteExtension on UsersRoute {
   static UsersRoute _fromState(GoRouterState state) => UsersRoute();
