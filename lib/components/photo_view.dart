@@ -7,7 +7,7 @@ class PhotoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return Column(children: <Widget>[
       Card(
           elevation: 5,
           child: ListTile(

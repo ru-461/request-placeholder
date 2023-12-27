@@ -10,7 +10,7 @@ class UserView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
+    return Column(children: <Widget>[
       GestureDetector(
           child: Card(
               elevation: 5,

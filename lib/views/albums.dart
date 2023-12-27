@@ -26,7 +26,7 @@ class Albums extends ConsumerWidget {
               return const Center(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
+                    children: <Widget>[
                       Text('Error.'),
                     ]),
               );

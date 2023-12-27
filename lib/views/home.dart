@@ -63,7 +63,7 @@ class _HomeState extends State<Home> {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             const Text(
               'Hello {JSON} Placeholder.',
               style: TextStyle(color: Colors.blue, fontSize: 24),

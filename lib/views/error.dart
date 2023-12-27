@@ -10,7 +10,7 @@ class Error extends StatelessWidget {
         body: Center(
             child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: [
+      children: <Widget>[
         const Text('Page not found.'),
         ElevatedButton(
             onPressed: () => context.go('/'), child: const Text('Home'))

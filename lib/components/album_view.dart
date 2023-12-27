@@ -8,7 +8,7 @@ class AlbumView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
+      children: <Widget>[
         Card(
             elevation: 5,
             child: ListTile(
