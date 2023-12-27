@@ -9,6 +9,7 @@ part of 'router.dart';
 List<RouteBase> get $appRoutes => [
       $homeRoutes,
       $postsRoute,
+      $postRoute,
       $commentsRoute,
       $albumsRoute,
       $photosRoute,
@@ -48,6 +49,30 @@ extension $PostsRouteExtension on PostsRoute {
 
   String get location => GoRouteData.$location(
         '/posts',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $postRoute => GoRouteData.$route(
+      path: '/posts/:id',
+      factory: $PostRouteExtension._fromState,
+    );
+
+extension $PostRouteExtension on PostRoute {
+  static PostRoute _fromState(GoRouterState state) => PostRoute(
+        id: int.parse(state.pathParameters['id']!),
+      );
+
+  String get location => GoRouteData.$location(
+        '/posts/${Uri.encodeComponent(id.toString())}',
       );
 
   void go(BuildContext context) => context.go(location);

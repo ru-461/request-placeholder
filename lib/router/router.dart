@@ -7,6 +7,7 @@ import 'package:request_placeholder/views/comments.dart';
 import 'package:request_placeholder/views/error.dart';
 import 'package:request_placeholder/views/home.dart';
 import 'package:request_placeholder/views/photos.dart';
+import 'package:request_placeholder/views/post.dart';
 import 'package:request_placeholder/views/posts.dart';
 import 'package:request_placeholder/views/todos.dart';
 import 'package:request_placeholder/views/users.dart';
@@ -45,11 +46,20 @@ class HomeRoutes extends GoRouteData {
       noneTransitionPage(child: const Home());
 }
 
-@TypedGoRoute<PostsRoute>(path: Routes.posts)
+@TypedGoRoute<PostsRoute>(path: Routes.posts, routes: [])
 class PostsRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Posts());
+}
+
+@TypedGoRoute<PostRoute>(path: Routes.post)
+class PostRoute extends GoRouteData {
+  const PostRoute({required this.id});
+  final int id;
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) => Post(id: id);
 }
 
 @TypedGoRoute<CommentsRoute>(path: Routes.comments)
