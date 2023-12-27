@@ -1,5 +1,5 @@
 {
-  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  "dart.flutterSdkPath": "~/fvm/versions/3.16.5",
   "dart.openDevTools": "flutter",
   "dart.renameFilesWithClasses": "always",
   "debug.internalConsoleOptions": "openOnSessionStart",
