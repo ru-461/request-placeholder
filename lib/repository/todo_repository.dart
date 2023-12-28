@@ -32,6 +32,21 @@ class TodoRepository {
     return parsed.map<Todo>((json) => Todo.fromJson(json)).toList();
   }
 
+  Future<Todo> fetchTodo(int id) async {
+    // URL
+    Uri url = Uri.parse('https://jsonplaceholder.typicode.com/todos/$id');
+
+    // GETリクエスト
+    final http.Response response = await http.get(url);
+
+    // ステータスコード確認
+    if (response.statusCode == 200) {
+      return compute(parseTodo, response.body);
+    } else {
+      throw Exception('Failed to fetch Albums.');
+    }
+  }
+
   // Todoに変換
   Todo parseTodo(String responseBody) {
     final parsed = jsonDecode(responseBody);

@@ -24,6 +24,21 @@ class PhotoRepository {
     }
   }
 
+  Future<Photo> fetchPhoto(int id) async {
+    // URL
+    Uri url = Uri.parse('https://jsonplaceholder.typicode.com/photos/$id');
+
+    // GETリクエスト
+    final http.Response response = await http.get(url);
+
+    // ステータスコード確認
+    if (response.statusCode == 200) {
+      return compute(parsePhoto, response.body);
+    } else {
+      throw Exception('Failed to fetch Albums.');
+    }
+  }
+
   // List<Photo>に変換
   List<Photo> parsePhotos(String responseBody) {
     final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();

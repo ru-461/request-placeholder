@@ -24,6 +24,21 @@ class CommentRepository {
     }
   }
 
+  Future<Comment> fetchComment(int id) async {
+    // URL
+    Uri url = Uri.parse('https://jsonplaceholder.typicode.com/comments/$id');
+
+    // GETリクエスト
+    final http.Response response = await http.get(url);
+
+    // ステータスコード確認
+    if (response.statusCode == 200) {
+      return compute(parseComment, response.body);
+    } else {
+      throw Exception('Failed to fetch Albums.');
+    }
+  }
+
   // List<Comments>に変換
   List<Comment> parseComments(String responseBody) {
     final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
