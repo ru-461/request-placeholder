@@ -30,4 +30,10 @@ class AlbumRepository {
 
     return parsed.map<Album>((json) => Album.fromJson(json)).toList();
   }
+
+  // Albumに変換
+  Album parseAlbum(String responseBody) {
+    final parsed = jsonDecode(responseBody);
+    return Album.fromJson(parsed);
+  }
 }

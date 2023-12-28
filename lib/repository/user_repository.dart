@@ -29,4 +29,10 @@ class UserRepository {
 
     return parsed.map<User>((json) => User.fromJson(json)).toList();
   }
+
+  // Userに変換
+  User parseUser(String responseBody) {
+    final parsed = jsonDecode(responseBody);
+    return User.fromJson(parsed);
+  }
 }

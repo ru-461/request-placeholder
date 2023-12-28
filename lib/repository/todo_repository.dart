@@ -31,4 +31,10 @@ class TodoRepository {
 
     return parsed.map<Todo>((json) => Todo.fromJson(json)).toList();
   }
+
+  // Todoに変換
+  Todo parseTodo(String responseBody) {
+    final parsed = jsonDecode(responseBody);
+    return Todo.fromJson(parsed);
+  }
 }

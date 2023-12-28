@@ -30,4 +30,10 @@ class CommentRepository {
 
     return parsed.map<Comment>((json) => Comment.fromJson(json)).toList();
   }
+
+  // Commentに変換
+  Comment parseComment(String responseBody) {
+    final parsed = jsonDecode(responseBody);
+    return Comment.fromJson(parsed);
+  }
 }

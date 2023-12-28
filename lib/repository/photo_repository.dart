@@ -30,4 +30,10 @@ class PhotoRepository {
 
     return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
   }
+
+  // Photoに変換
+  Photo parsePhoto(String responseBody) {
+    final parsed = jsonDecode(responseBody);
+    return Photo.fromJson(parsed);
+  }
 }
