@@ -11,10 +11,15 @@ List<RouteBase> get $appRoutes => [
       $postsRoute,
       $postRoute,
       $commentsRoute,
+      $commentRoute,
       $albumsRoute,
+      $albumRoute,
       $photosRoute,
+      $photoRoute,
       $todosRoute,
+      $todoRoute,
       $usersRoute,
+      $userRoute,
     ];
 
 RouteBase get $homeRoutes => GoRouteData.$route(
@@ -107,6 +112,30 @@ extension $CommentsRouteExtension on CommentsRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
+RouteBase get $commentRoute => GoRouteData.$route(
+      path: '/comments/:id',
+      factory: $CommentRouteExtension._fromState,
+    );
+
+extension $CommentRouteExtension on CommentRoute {
+  static CommentRoute _fromState(GoRouterState state) => CommentRoute(
+        id: int.parse(state.pathParameters['id']!),
+      );
+
+  String get location => GoRouteData.$location(
+        '/comments/${Uri.encodeComponent(id.toString())}',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
 RouteBase get $albumsRoute => GoRouteData.$route(
       path: '/albums',
       factory: $AlbumsRouteExtension._fromState,
@@ -117,6 +146,30 @@ extension $AlbumsRouteExtension on AlbumsRoute {
 
   String get location => GoRouteData.$location(
         '/albums',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $albumRoute => GoRouteData.$route(
+      path: '/albums/:id',
+      factory: $AlbumRouteExtension._fromState,
+    );
+
+extension $AlbumRouteExtension on AlbumRoute {
+  static AlbumRoute _fromState(GoRouterState state) => AlbumRoute(
+        id: int.parse(state.pathParameters['id']!),
+      );
+
+  String get location => GoRouteData.$location(
+        '/albums/${Uri.encodeComponent(id.toString())}',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -151,6 +204,30 @@ extension $PhotosRouteExtension on PhotosRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
+RouteBase get $photoRoute => GoRouteData.$route(
+      path: '/photos/:id',
+      factory: $PhotoRouteExtension._fromState,
+    );
+
+extension $PhotoRouteExtension on PhotoRoute {
+  static PhotoRoute _fromState(GoRouterState state) => PhotoRoute(
+        id: int.parse(state.pathParameters['id']!),
+      );
+
+  String get location => GoRouteData.$location(
+        '/photos/${Uri.encodeComponent(id.toString())}',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
 RouteBase get $todosRoute => GoRouteData.$route(
       path: '/todos',
       factory: $TodosRouteExtension._fromState,
@@ -173,6 +250,30 @@ extension $TodosRouteExtension on TodosRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
+RouteBase get $todoRoute => GoRouteData.$route(
+      path: '/todos/:id',
+      factory: $TodoRouteExtension._fromState,
+    );
+
+extension $TodoRouteExtension on TodoRoute {
+  static TodoRoute _fromState(GoRouterState state) => TodoRoute(
+        id: int.parse(state.pathParameters['id']!),
+      );
+
+  String get location => GoRouteData.$location(
+        '/todos/${Uri.encodeComponent(id.toString())}',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
 RouteBase get $usersRoute => GoRouteData.$route(
       path: '/users',
       factory: $UsersRouteExtension._fromState,
@@ -183,6 +284,30 @@ extension $UsersRouteExtension on UsersRoute {
 
   String get location => GoRouteData.$location(
         '/users',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $userRoute => GoRouteData.$route(
+      path: '/users/:id',
+      factory: $UserRouteExtension._fromState,
+    );
+
+extension $UserRouteExtension on UserRoute {
+  static UserRoute _fromState(GoRouterState state) => UserRoute(
+        id: int.parse(state.pathParameters['id']!),
+      );
+
+  String get location => GoRouteData.$location(
+        '/users/${Uri.encodeComponent(id.toString())}',
       );
 
   void go(BuildContext context) => context.go(location);

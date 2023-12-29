@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:request_placeholder/constants/routes.dart';
+import 'package:request_placeholder/views/album.dart';
 import 'package:request_placeholder/views/albums.dart';
 import 'package:request_placeholder/views/base.dart';
+import 'package:request_placeholder/views/comment.dart';
 import 'package:request_placeholder/views/comments.dart';
 import 'package:request_placeholder/views/error.dart';
 import 'package:request_placeholder/views/home.dart';
+import 'package:request_placeholder/views/photo.dart';
 import 'package:request_placeholder/views/photos.dart';
 import 'package:request_placeholder/views/post.dart';
 import 'package:request_placeholder/views/posts.dart';
+import 'package:request_placeholder/views/todo.dart';
 import 'package:request_placeholder/views/todos.dart';
+import 'package:request_placeholder/views/user.dart';
 import 'package:request_placeholder/views/users.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -69,11 +74,31 @@ class CommentsRoute extends GoRouteData {
       noneTransitionPage(child: const Comments());
 }
 
+@TypedGoRoute<CommentRoute>(path: Routes.comment)
+class CommentRoute extends GoRouteData {
+  const CommentRoute({required this.id});
+  final int id;
+
+  @override
+  Page buildPage(BuildContext context, GoRouterState state) =>
+      noneTransitionPage(child: Comment(id: id));
+}
+
 @TypedGoRoute<AlbumsRoute>(path: Routes.albums)
 class AlbumsRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Albums());
+}
+
+@TypedGoRoute<AlbumRoute>(path: Routes.album)
+class AlbumRoute extends GoRouteData {
+  const AlbumRoute({required this.id});
+  final int id;
+
+  @override
+  Page buildPage(BuildContext context, GoRouterState state) =>
+      noneTransitionPage(child: Album(id: id));
 }
 
 @TypedGoRoute<PhotosRoute>(path: Routes.photos)
@@ -83,6 +108,16 @@ class PhotosRoute extends GoRouteData {
       noneTransitionPage(child: const Photos());
 }
 
+@TypedGoRoute<PhotoRoute>(path: Routes.photo)
+class PhotoRoute extends GoRouteData {
+  const PhotoRoute({required this.id});
+  final int id;
+
+  @override
+  Page buildPage(BuildContext context, GoRouterState state) =>
+      noneTransitionPage(child: Photo(id: id));
+}
+
 @TypedGoRoute<TodosRoute>(path: Routes.todos)
 class TodosRoute extends GoRouteData {
   @override
@@ -90,11 +125,31 @@ class TodosRoute extends GoRouteData {
       noneTransitionPage(child: const Todos());
 }
 
+@TypedGoRoute<TodoRoute>(path: Routes.todo)
+class TodoRoute extends GoRouteData {
+  const TodoRoute({required this.id});
+  final int id;
+
+  @override
+  Page buildPage(BuildContext context, GoRouterState state) =>
+      noneTransitionPage(child: Todo(id: id));
+}
+
 @TypedGoRoute<UsersRoute>(path: Routes.users)
 class UsersRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Users());
+}
+
+@TypedGoRoute<UserRoute>(path: Routes.user)
+class UserRoute extends GoRouteData {
+  const UserRoute({required this.id});
+  final int id;
+
+  @override
+  Page buildPage(BuildContext context, GoRouterState state) =>
+      noneTransitionPage(child: User(id: id));
 }
 
 // アニメーションなしトランジション
