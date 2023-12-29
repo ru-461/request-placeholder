@@ -5,8 +5,8 @@ import 'package:request_placeholder/providers/album_provider.dart';
 
 final logger = Logger();
 
-class Albums extends ConsumerWidget {
-  const Albums({super.key, required this.id});
+class Album extends ConsumerWidget {
+  const Album({super.key, required this.id});
   final int id;
 
   @override

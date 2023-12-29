@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:logger/logger.dart';
 import 'package:request_placeholder/models/user.dart';
 
@@ -10,21 +11,26 @@ class UserView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final userId = user.id;
+
     return Column(children: <Widget>[
       GestureDetector(
           child: Card(
               elevation: 5,
-              child: ListTile(
-                title: Text(
-                  user.name,
-                  style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                subtitle: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5.0),
-                  child: Text(
-                    user.email,
-                    style: const TextStyle(fontSize: 15),
+              child: InkWell(
+                onTap: () => context.push('/users/$userId'),
+                child: ListTile(
+                  title: Text(
+                    user.name,
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 5.0),
+                    child: Text(
+                      user.email,
+                      style: const TextStyle(fontSize: 15),
+                    ),
                   ),
                 ),
               )),

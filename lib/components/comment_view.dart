@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:request_placeholder/models/comment.dart';
 
 class CommentView extends StatelessWidget {
@@ -7,20 +8,26 @@ class CommentView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final commentId = comment.id;
+
     return Column(
       children: <Widget>[
         Card(
           elevation: 5,
-          child: ListTile(
-            title: Text(
-              comment.name,
-              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            subtitle: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 5.0),
-              child: Text(
-                comment.body,
-                style: const TextStyle(fontSize: 15),
+          child: InkWell(
+            onTap: () => context.push('/comments/$commentId'),
+            child: ListTile(
+              title: Text(
+                comment.name,
+                style:
+                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              subtitle: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 5.0),
+                child: Text(
+                  comment.body,
+                  style: const TextStyle(fontSize: 15),
+                ),
               ),
             ),
           ),

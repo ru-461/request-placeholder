@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:request_placeholder/models/album.dart';
 
 class AlbumView extends StatelessWidget {
@@ -7,21 +8,26 @@ class AlbumView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final albumId = album.id;
+
     return Column(
       children: <Widget>[
         Card(
             elevation: 5,
-            child: ListTile(
-              title: Text(
-                album.title,
-                style:
-                    const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              subtitle: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5.0),
-                child: Text(
+            child: InkWell(
+              onTap: () => context.push('/albums/$albumId'),
+              child: ListTile(
+                title: Text(
                   album.title,
-                  style: const TextStyle(fontSize: 15),
+                  style: const TextStyle(
+                      fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                subtitle: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: Text(
+                    album.title,
+                    style: const TextStyle(fontSize: 15),
+                  ),
                 ),
               ),
             ))
