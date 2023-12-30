@@ -11,7 +11,7 @@ final logger = Logger();
 class PhotoRepository {
   Future<List<Photo>> fetchPhotos() async {
     // URL
-    Uri url = Uri.parse(URL.photos);
+    final Uri url = Uri.parse(URL.photos);
 
     // GETリクエスト
     final http.Response response = await http.get(url);
@@ -26,7 +26,8 @@ class PhotoRepository {
 
   Future<Photo> fetchPhoto(int id) async {
     // URL
-    Uri url = Uri.parse('https://jsonplaceholder.typicode.com/photos/$id');
+    final Uri url =
+        Uri.parse('https://jsonplaceholder.typicode.com/photos/$id');
 
     // GETリクエスト
     final http.Response response = await http.get(url);

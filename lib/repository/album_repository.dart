@@ -11,7 +11,7 @@ final logger = Logger();
 class AlbumRepository {
   Future<List<Album>> fetchAlbums() async {
     // URL
-    Uri url = Uri.parse(URL.albums);
+    final Uri url = Uri.parse(URL.albums);
 
     // GETリクエスト
     final http.Response response = await http.get(url);
@@ -26,7 +26,8 @@ class AlbumRepository {
 
   Future<Album> fetchAlbum(int id) async {
     // URL
-    Uri url = Uri.parse('https://jsonplaceholder.typicode.com/albums/$id');
+    final Uri url =
+        Uri.parse('https://jsonplaceholder.typicode.com/albums/$id');
 
     // GETリクエスト
     final http.Response response = await http.get(url);

@@ -12,7 +12,7 @@ final logger = Logger();
 class TodoRepository {
   Future<List<Todo>> fetchTodos() async {
     // URL
-    Uri url = Uri.parse(URL.todos);
+    final Uri url = Uri.parse(URL.todos);
 
     // GETリクエスト
     final http.Response response = await http.get(url);

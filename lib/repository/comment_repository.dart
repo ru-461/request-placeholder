@@ -11,7 +11,7 @@ final logger = Logger();
 class CommentRepository {
   Future<List<Comment>> fetchComments() async {
     // URL
-    Uri url = Uri.parse(URL.comments);
+    final Uri url = Uri.parse(URL.comments);
 
     // GETリクエスト
     final http.Response response = await http.get(url);
@@ -26,7 +26,8 @@ class CommentRepository {
 
   Future<Comment> fetchComment(int id) async {
     // URL
-    Uri url = Uri.parse('https://jsonplaceholder.typicode.com/comments/$id');
+    final Uri url =
+        Uri.parse('https://jsonplaceholder.typicode.com/comments/$id');
 
     // GETリクエスト
     final http.Response response = await http.get(url);

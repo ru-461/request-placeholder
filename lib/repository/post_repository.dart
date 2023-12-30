@@ -11,7 +11,7 @@ final logger = Logger();
 class PostRepository {
   Future<List<Post>> fetchPosts() async {
     // URL
-    Uri url = Uri.parse(URL.posts);
+    final Uri url = Uri.parse(URL.posts);
 
     // GETリクエスト
     final http.Response response = await http.get(url);
@@ -26,7 +26,7 @@ class PostRepository {
 
   Future<Post> fetchPost(int id) async {
     // URL
-    Uri url = Uri.parse('https://jsonplaceholder.typicode.com/posts/$id');
+    final Uri url = Uri.parse('https://jsonplaceholder.typicode.com/posts/$id');
 
     // GETリクエスト
     final http.Response response = await http.get(url);

@@ -11,7 +11,7 @@ final logger = Logger();
 class UserRepository {
   Future<List<User>> fetchUsers() async {
     // URL
-    Uri url = Uri.parse(URL.users);
+    final Uri url = Uri.parse(URL.users);
 
     // GETリクエスト
     final http.Response response = await http.get(url);
@@ -25,7 +25,7 @@ class UserRepository {
 
   Future<User> fetchUser(int id) async {
     // URL
-    Uri url = Uri.parse('https://jsonplaceholder.typicode.com/users/$id');
+    final Uri url = Uri.parse('https://jsonplaceholder.typicode.com/users/$id');
 
     // GETリクエスト
     final http.Response response = await http.get(url);
