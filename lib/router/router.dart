@@ -44,21 +44,21 @@ GoRouter router(RouterRef ref) {
       ]);
 }
 
-@TypedGoRoute<HomeRoutes>(path: Routes.home)
+@TypedGoRoute<HomeRoutes>(path: ROUTES.home)
 class HomeRoutes extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Home());
 }
 
-@TypedGoRoute<PostsRoute>(path: Routes.posts, routes: [])
+@TypedGoRoute<PostsRoute>(path: ROUTES.posts, routes: [])
 class PostsRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Posts());
 }
 
-@TypedGoRoute<PostRoute>(path: Routes.post)
+@TypedGoRoute<PostRoute>(path: ROUTES.post)
 class PostRoute extends GoRouteData {
   const PostRoute({required this.id});
   final int id;
@@ -67,14 +67,14 @@ class PostRoute extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) => Post(id: id);
 }
 
-@TypedGoRoute<CommentsRoute>(path: Routes.comments)
+@TypedGoRoute<CommentsRoute>(path: ROUTES.comments)
 class CommentsRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Comments());
 }
 
-@TypedGoRoute<CommentRoute>(path: Routes.comment)
+@TypedGoRoute<CommentRoute>(path: ROUTES.comment)
 class CommentRoute extends GoRouteData {
   const CommentRoute({required this.id});
   final int id;
@@ -84,14 +84,14 @@ class CommentRoute extends GoRouteData {
       noneTransitionPage(child: Comment(id: id));
 }
 
-@TypedGoRoute<AlbumsRoute>(path: Routes.albums)
+@TypedGoRoute<AlbumsRoute>(path: ROUTES.albums)
 class AlbumsRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Albums());
 }
 
-@TypedGoRoute<AlbumRoute>(path: Routes.album)
+@TypedGoRoute<AlbumRoute>(path: ROUTES.album)
 class AlbumRoute extends GoRouteData {
   const AlbumRoute({required this.id});
   final int id;
@@ -101,14 +101,14 @@ class AlbumRoute extends GoRouteData {
       noneTransitionPage(child: Album(id: id));
 }
 
-@TypedGoRoute<PhotosRoute>(path: Routes.photos)
+@TypedGoRoute<PhotosRoute>(path: ROUTES.photos)
 class PhotosRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Photos());
 }
 
-@TypedGoRoute<PhotoRoute>(path: Routes.photo)
+@TypedGoRoute<PhotoRoute>(path: ROUTES.photo)
 class PhotoRoute extends GoRouteData {
   const PhotoRoute({required this.id});
   final int id;
@@ -118,14 +118,14 @@ class PhotoRoute extends GoRouteData {
       noneTransitionPage(child: Photo(id: id));
 }
 
-@TypedGoRoute<TodosRoute>(path: Routes.todos)
+@TypedGoRoute<TodosRoute>(path: ROUTES.todos)
 class TodosRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Todos());
 }
 
-@TypedGoRoute<TodoRoute>(path: Routes.todo)
+@TypedGoRoute<TodoRoute>(path: ROUTES.todo)
 class TodoRoute extends GoRouteData {
   const TodoRoute({required this.id});
   final int id;
@@ -135,14 +135,14 @@ class TodoRoute extends GoRouteData {
       noneTransitionPage(child: Todo(id: id));
 }
 
-@TypedGoRoute<UsersRoute>(path: Routes.users)
+@TypedGoRoute<UsersRoute>(path: ROUTES.users)
 class UsersRoute extends GoRouteData {
   @override
   Page buildPage(BuildContext context, GoRouterState state) =>
       noneTransitionPage(child: const Users());
 }
 
-@TypedGoRoute<UserRoute>(path: Routes.user)
+@TypedGoRoute<UserRoute>(path: ROUTES.user)
 class UserRoute extends GoRouteData {
   const UserRoute({required this.id});
   final int id;

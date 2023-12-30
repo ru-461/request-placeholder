@@ -1,4 +1,4 @@
-class Routes {
+class ROUTES {
   static const String home = '/';
   static const String posts = '/posts';
   static const String post = '/posts/:id';
