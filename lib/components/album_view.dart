@@ -8,7 +8,7 @@ class AlbumView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final albumId = album.id;
+    final int albumId = album.id;
 
     return Column(
       children: <Widget>[

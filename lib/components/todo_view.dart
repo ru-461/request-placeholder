@@ -8,7 +8,7 @@ class TodoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final todoId = todo.id;
+    final int todoId = todo.id;
 
     return Column(
       children: <Widget>[

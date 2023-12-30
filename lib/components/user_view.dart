@@ -11,7 +11,7 @@ class UserView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final userId = user.id;
+    final int userId = user.id;
 
     return Column(children: <Widget>[
       GestureDetector(

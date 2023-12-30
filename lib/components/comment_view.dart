@@ -8,7 +8,7 @@ class CommentView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final commentId = comment.id;
+    final int commentId = comment.id;
 
     return Column(
       children: <Widget>[

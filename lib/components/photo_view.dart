@@ -8,7 +8,7 @@ class PhotoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final photoId = photo.id;
+    final int photoId = photo.id;
 
     return Column(children: <Widget>[
       Card(
