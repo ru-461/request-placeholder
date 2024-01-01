@@ -34,7 +34,7 @@ class TodoRepository {
 
   Future<Todo> fetchTodo(int id) async {
     // URL
-    Uri url = Uri.parse('https://jsonplaceholder.typicode.com/todos/$id');
+    Uri url = Uri.parse('${URL.todos}/$id');
 
     // GETリクエスト
     final http.Response response = await http.get(url);

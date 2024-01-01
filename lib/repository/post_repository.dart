@@ -26,7 +26,7 @@ class PostRepository {
 
   Future<Post> fetchPost(int id) async {
     // URL
-    final Uri url = Uri.parse('https://jsonplaceholder.typicode.com/posts/$id');
+    final Uri url = Uri.parse('${URL.posts}/$id');
 
     // GETリクエスト
     final http.Response response = await http.get(url);

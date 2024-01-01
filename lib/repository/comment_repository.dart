@@ -26,8 +26,7 @@ class CommentRepository {
 
   Future<Comment> fetchComment(int id) async {
     // URL
-    final Uri url =
-        Uri.parse('https://jsonplaceholder.typicode.com/comments/$id');
+    final Uri url = Uri.parse('${URL.comments}/$id');
 
     // GETリクエスト
     final http.Response response = await http.get(url);

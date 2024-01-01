@@ -26,8 +26,7 @@ class PhotoRepository {
 
   Future<Photo> fetchPhoto(int id) async {
     // URL
-    final Uri url =
-        Uri.parse('https://jsonplaceholder.typicode.com/photos/$id');
+    final Uri url = Uri.parse('${URL.photos}/$id');
 
     // GETリクエスト
     final http.Response response = await http.get(url);

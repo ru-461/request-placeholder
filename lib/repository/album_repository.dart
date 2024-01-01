@@ -26,8 +26,7 @@ class AlbumRepository {
 
   Future<Album> fetchAlbum(int id) async {
     // URL
-    final Uri url =
-        Uri.parse('https://jsonplaceholder.typicode.com/albums/$id');
+    final Uri url = Uri.parse('${URL.albums}/$id');
 
     // GETリクエスト
     final http.Response response = await http.get(url);

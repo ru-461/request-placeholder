@@ -25,7 +25,7 @@ class UserRepository {
 
   Future<User> fetchUser(int id) async {
     // URL
-    final Uri url = Uri.parse('https://jsonplaceholder.typicode.com/users/$id');
+    final Uri url = Uri.parse('${URL.users}/$id');
 
     // GETリクエスト
     final http.Response response = await http.get(url);
